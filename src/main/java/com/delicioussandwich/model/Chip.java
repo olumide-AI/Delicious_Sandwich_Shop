@@ -1,12 +1,15 @@
 package com.delicioussandwich.model;
 
 public class Chip extends MenuItem{
-    public Chip(String name, double price) {
-        super(name, price);
+    private static final double CHIP_PRICE = 1.50;
+
+
+    public Chip(String flavor) {
+        super(flavor + " Chips", CHIP_PRICE);
     }
 
     @Override
     public String toString(){
-        return "Chips: " + super.toString();
+        return "Chips: " + getName() + " - $" +String.format("&.2f", getPrice());
     }
 }
