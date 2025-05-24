@@ -15,4 +15,9 @@ public class RegularTopping extends Topping{
     public double getPrice(String sandwichSize) {
         return 0.0;
     }
+
+    @Override
+    public String toString(){
+        return "Regular Topping: " + name;
+    }
 }

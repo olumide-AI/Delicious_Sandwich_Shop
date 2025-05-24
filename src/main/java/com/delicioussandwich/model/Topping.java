@@ -1,5 +1,8 @@
 package com.delicioussandwich.model;
 
+/**
+ * Base class for the toppings
+ */
 public abstract class Topping {
     protected String name;
 
