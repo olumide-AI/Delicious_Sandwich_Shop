@@ -6,11 +6,10 @@ public class Drink extends MenuItem{
     /**
      *
      * @param name of the drink
-     * @param price of the drink based on size
      * @param drinkCupSize the actually size can be small, medium or large
      */
-    public Drink(String name, double price, String drinkCupSize) {
-        super(name, price);
+    public Drink(String name, String drinkCupSize) {
+        super(drinkCupSize + " " + name, calcPrice(drinkCupSize));
         this.drinkCupSize = drinkCupSize;
     }
     //Getters Only

@@ -10,14 +10,14 @@ import static org.junit.Assert.assertEquals;
 public class ChipTest {
     @Test
     public void chipNameTest (){
-        Chip chip = new Chip("BBQ Lays", 1.25);
-        assertEquals("BBQ Lays", chip.getName());
+        Chip chip = new Chip("BBQ");
+        assertEquals("BBQ Chips", chip.getName());
     }
 
     @Test
     public void chipPriceTest (){
-        Chip chip = new Chip("BBQ Lays", 1.25);
-        assertEquals(1.25, chip.getPrice(), 0.001);
+        Chip chip = new Chip("Vinegar");
+        assertEquals(1.50, chip.getPrice(), 0.001);
     }
 
 }
