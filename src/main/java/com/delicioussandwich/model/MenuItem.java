@@ -29,6 +29,7 @@ public abstract class MenuItem {
         this.price = price;
     }
     //To-String Method
+    @Override
     public String toString(){
         return String.format("%s - $%.2f", name, price);
     }
