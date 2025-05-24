@@ -9,7 +9,7 @@ public class ToppingTest {
     public void testRegularToppingIsZero(){
         //Arrange - Create new topping
         Topping topping = new RegularTopping("Spinach");
-        //Act and Arrange
+        //Act and Assert
         assertEquals(0.0, topping.getPrice("4"), 0.001);
         assertEquals(0.0, topping.getPrice("8"), 0.001);
         assertEquals(0.0, topping.getPrice("12"), 0.001);
@@ -19,7 +19,7 @@ public class ToppingTest {
     public void testPremiumToppingWithNormalPrice(){
         //Arrange - Create new Topping
         Topping topping = new PremiumTopping("Turkey", false);
-        //Act and Arrange
+        //Act and Assert
         assertEquals(1.0, topping.getPrice("4"), 0.001);
         assertEquals(2.0, topping.getPrice("8") , 0.001);
         assertEquals(3.0, topping.getPrice("12") , 0.001);
@@ -29,7 +29,7 @@ public class ToppingTest {
     public void testPremiumToppingWithExtraTopping(){
         //Arrange - Create new Topping
         Topping topping = new PremiumTopping("Turkey", true);
-        //Act and Arrange
+        //Act and Assert
         assertEquals(1.50, topping.getPrice("4"), 0.001);
         assertEquals(3.0, topping.getPrice("8"), 0.001);
         assertEquals(4.50, topping.getPrice("12"), 0.001);
