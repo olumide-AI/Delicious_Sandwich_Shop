@@ -12,7 +12,7 @@ public class Receipt {
     //Returns date, time for us to use when we generate our receipt
     private static String getCurrentDateAndTime(){
         LocalDateTime currentTime = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyy hh:mm a");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy hh:mm a");
         return currentTime.format(formatter);
     }
     public static String generateReceipt(Order order){
@@ -22,7 +22,7 @@ public class Receipt {
         //Append the header of the receipt
         stringBuilderReceipt.append(RESTAURANT_NAME).append("\n");
         stringBuilderReceipt.append(ADDRESS).append("\n");
-        stringBuilderReceipt.append("Date; ").append(getCurrentDateAndTime()).append("\n");
+        stringBuilderReceipt.append("Date: ").append(getCurrentDateAndTime()).append("\n");
         stringBuilderReceipt.append("\n");
         //Append recipt infomation
         stringBuilderReceipt.append(order.getSummary()).append("\n");
