@@ -5,6 +5,7 @@ import com.delicioussandwich.model.menuitem.Chip;
 import com.delicioussandwich.model.menuitem.Drink;
 import com.delicioussandwich.model.menuitem.Sandwich;
 import com.delicioussandwich.model.order.Order;
+import com.delicioussandwich.model.signaturesandwiches.*;
 import com.delicioussandwich.model.topping.PremiumTopping;
 import com.delicioussandwich.model.topping.RegularTopping;
 
@@ -90,38 +91,67 @@ public class Application {
     private static Sandwich buildUserSandwich(){
         System.out.println("Let's make your sandwich according to what you like");
         System.out.println("========");
+        System.out.println("Select '1' to build your own");
+        System.out.println("Select '2' for a Signature BLT");
+        System.out.println("Select '3' for a Signature Philly Cheese Steak");
+        System.out.println("Select '4' for a Signature Turkey Club");
+        System.out.println("Select '5' for a Signature Buffalo Chicken");
+        System.out.println("Select '6' for a Signature Maaike Special");
 
-        System.out.println("Enter bread type (white, wheat, wrap or rye): ");
+        String userSandwichChoice = scanner.nextLine().trim();
+
+        System.out.println("Choose your bread (White, Wheat, Wrap and Rye: " );
         String breadType = scanner.nextLine().toLowerCase().trim();
 
-        System.out.println("Enter sandwich side (4, 8, or 12): ");
-        String sandwichSize = scanner.nextLine().toLowerCase().trim();
-
-        System.out.println("Do you want sandwich toasted (yes/no): ");
-        boolean sandwichToasted = scanner.nextLine().toLowerCase().trim().equalsIgnoreCase("yes");
-
-        Sandwich sandwich = new Sandwich(sandwichSize, breadType, sandwichToasted);
-
-        //Ask user for topping options
-        while (true){
-            System.out.println("Do you want to add a topping? Type 'topping name' and type 'done' when finished: ");
-            String toppingName = scanner.nextLine().toLowerCase().trim();
-            if(toppingName.equalsIgnoreCase("done")){
+        Sandwich sandwich;
+        switch (userSandwichChoice){
+            case "2":
+                sandwich = new BaconLettuceTomato(breadType);
                 break;
-            }
-
-            System.out.println("Would you like premium or regular toppings today?");
-            String toppingType = scanner.nextLine().toLowerCase().trim();
-            if(toppingType.equalsIgnoreCase("regular")){
-                sandwich.addTopping(new RegularTopping(toppingName));
-            }
-            else{
-                System.out.println("Would you like meat or cheese? ");
-                String premiumToppingType = scanner.nextLine().toLowerCase().trim();
-                System.out.println("Would you like extra topping today? (yes or no): ");
-                boolean extraTopping = scanner.nextLine().equalsIgnoreCase("yes");
-                sandwich.addTopping(new PremiumTopping(toppingName, premiumToppingType, extraTopping));
-            }
+            case "3":
+                sandwich = new PhillyCheeseSteak(breadType);
+                break;
+            case "4":
+                sandwich = new TurkeyClub(breadType);
+                break;
+            case "5":
+                sandwich = new BuffaloChicken(breadType);
+                break;
+            case "6":
+                sandwich = new MaaikeSpecial(breadType);
+                break;
+            case "1":
+            default:
+                String sandwichSize;
+                while (true){
+                    System.out.println("Enter sandwich size (4,8, or 12 inches): ");
+                    sandwichSize = scanner.nextLine().trim();
+                    if(sandwichSize.equalsIgnoreCase("4") || sandwichSize.equalsIgnoreCase("8") || sandwichSize.equalsIgnoreCase("12")){
+                        break;
+                    }
+                    System.out.println("Please enter 4 , 8, or 12");
+                }
+                boolean isToasted = false;
+                while (true){
+                    System.out.println("Do you want it toasted? (yes/no): ");
+                    String toastInput = scanner.nextLine().toLowerCase().trim();
+                    if(toastInput.equalsIgnoreCase("yes")){
+                        isToasted = true;
+                        break;
+                    } else if (toastInput.equalsIgnoreCase("no")) {
+                        break;
+                    }
+                    else {
+                        System.out.println("Please enter 'yes or 'no'. ");
+                    }
+                }
+                sandwich = new Sandwich(sandwichSize, breadType, isToasted);
+                break;
+        }
+        System.out.println("Would you like to customize toppings? (yes/no): ");
+        if(scanner.nextLine().trim().equalsIgnoreCase("yes"))
+        {
+            customizeToppings(sandwich);
         }
         return sandwich;
     }
