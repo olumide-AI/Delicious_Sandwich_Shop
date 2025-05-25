@@ -7,5 +7,5 @@ public abstract class SignatureSandwich extends Sandwich{
         super.setName(sigSandwichName);
     }
 
-    public void se
+
 }
