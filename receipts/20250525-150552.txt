@@ -1,0 +1,18 @@
+DELI-cious Sandwich Shop
+303 2nd st, San Francisco, CA
+Date: 05/25/2025 03:05 PM
+
+--- Order Summary ---
+1. Sandwich: BLT
+Toppings:
+ - Bacon
+ - Cheddar
+ - Lettuce
+ - Tomato
+ - Ranch
+ - au jus
+Price: $9.00
+2. Drink: medium fanta - $2.50
+3. Chips: bbq lays Chips - $&.2f
+Total: $13.00
+Thank you, come again.
