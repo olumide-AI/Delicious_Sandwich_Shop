@@ -1,7 +1,12 @@
 package com.delicioussandwich.app;
 
 import com.delicioussandwich.logic.ReceiptFile;
-import com.delicioussandwich.model.*;
+import com.delicioussandwich.model.menuitem.Chip;
+import com.delicioussandwich.model.menuitem.Drink;
+import com.delicioussandwich.model.menuitem.Sandwich;
+import com.delicioussandwich.model.order.Order;
+import com.delicioussandwich.model.topping.PremiumTopping;
+import com.delicioussandwich.model.topping.RegularTopping;
 
 import java.util.Scanner;
 

@@ -1,6 +1,8 @@
-package com.delicioussandwich.model;
+package com.delicioussandwich.model.topping;
 
-public class RegularTopping extends Topping{
+import com.delicioussandwich.model.abstractclass.Topping;
+
+public class RegularTopping extends Topping {
     //Constructor
     public RegularTopping(String name) {
         super(name);

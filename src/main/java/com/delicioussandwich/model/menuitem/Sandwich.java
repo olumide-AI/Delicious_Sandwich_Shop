@@ -1,9 +1,12 @@
-package com.delicioussandwich.model;
+package com.delicioussandwich.model.menuitem;
+
+import com.delicioussandwich.model.abstractclass.MenuItem;
+import com.delicioussandwich.model.abstractclass.Topping;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sandwich extends MenuItem{
+public class Sandwich extends MenuItem {
     //Needed Fields
     private String sandwichSize;
     private String breadType;

@@ -1,4 +1,4 @@
-package com.delicioussandwich.model;
+package com.delicioussandwich.model.abstractclass;
 
 /**
  * Base class for the toppings

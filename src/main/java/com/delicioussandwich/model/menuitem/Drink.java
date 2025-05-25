@@ -1,6 +1,8 @@
-package com.delicioussandwich.model;
+package com.delicioussandwich.model.menuitem;
 
-public class Drink extends MenuItem{
+import com.delicioussandwich.model.abstractclass.MenuItem;
+
+public class Drink extends MenuItem {
     private String drinkCupSize;
 
     /**

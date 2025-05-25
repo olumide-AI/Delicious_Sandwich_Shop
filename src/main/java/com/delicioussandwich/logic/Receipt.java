@@ -1,6 +1,6 @@
 package com.delicioussandwich.logic;
 
-import com.delicioussandwich.model.Order;
+import com.delicioussandwich.model.order.Order;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

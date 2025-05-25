@@ -1,5 +1,6 @@
 package com.delicioussandwich.model;
 
+import com.delicioussandwich.model.menuitem.Drink;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

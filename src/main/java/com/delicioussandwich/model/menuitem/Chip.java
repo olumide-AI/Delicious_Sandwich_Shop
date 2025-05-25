@@ -1,6 +1,8 @@
-package com.delicioussandwich.model;
+package com.delicioussandwich.model.menuitem;
 
-public class Chip extends MenuItem{
+import com.delicioussandwich.model.abstractclass.MenuItem;
+
+public class Chip extends MenuItem {
     private static final double CHIP_PRICE = 1.50;
 
 

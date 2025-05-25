@@ -1,4 +1,4 @@
-package com.delicioussandwich.model;
+package com.delicioussandwich.model.order;
 
 public class Customer {
     //Properties

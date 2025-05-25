@@ -1,4 +1,6 @@
-package com.delicioussandwich.model;
+package com.delicioussandwich.model.order;
+
+import com.delicioussandwich.model.abstractclass.MenuItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +10,7 @@ import java.util.List;
  */
 public class Order {
     private List<MenuItem> items;
-    private  Customer customer;
+    private Customer customer;
 
     //Constructor
     public Order(){

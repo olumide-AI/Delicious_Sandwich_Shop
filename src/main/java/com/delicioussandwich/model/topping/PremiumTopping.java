@@ -1,11 +1,13 @@
-package com.delicioussandwich.model;
+package com.delicioussandwich.model.topping;
+
+import com.delicioussandwich.model.abstractclass.Topping;
 
 /**
  * The premium toppings class will ask use if they want an extra charge
  * for more toppings based on sandwich size
  */
 
-public class PremiumTopping extends Topping{
+public class PremiumTopping extends Topping {
     private boolean extraTopping;
     private String toppingCategory;
 

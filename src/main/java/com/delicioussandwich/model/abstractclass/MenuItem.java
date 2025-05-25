@@ -1,4 +1,4 @@
-package com.delicioussandwich.model;
+package com.delicioussandwich.model.abstractclass;
 
 /**
  * Abstract and base class for all menu item: sandwich, chips and drinks
