@@ -62,6 +62,11 @@ public class Application {
                     isOrdering = false;
                     break;
                 case "0":
+                    System.out.println("Order canceled. ");
+                    isOrdering = false;
+                    break;
+                default:
+                    System.out.println("Invalid options, please select 0,1,2,3, 0r 4.");
 
 
             }
