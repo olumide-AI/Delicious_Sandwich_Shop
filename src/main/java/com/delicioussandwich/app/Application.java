@@ -99,7 +99,7 @@ public class Application {
 
         //Ask user for topping options
         while (true){
-            System.out.println("Ass a topping or type 'done' when finished: ");
+            System.out.println("Do you want to add a topping? Type 'topping name' and type 'done' when finished: ");
             String toppingName = scanner.nextLine().toLowerCase().trim();
             if(toppingName.equalsIgnoreCase("done")){
                 break;
@@ -140,7 +140,7 @@ public class Application {
     }
 
     private static Chip buildUserChip(){
-        System.out.println("Enter the chip type you wanr. FYI we only have one size and they're all the same price");
+        System.out.println("Enter the chip type and flavour you want. FYI we only have one size and they're all the same price");
         String userInput = scanner.nextLine().toLowerCase().trim();
         return new Chip(userInput);
     }

@@ -1,0 +1,21 @@
+DELI-cious Sandwich Shop
+303 2nd st, San Francisco, CA
+Date: 05/25/2025 05:24 AM
+
+--- Order Summary ---
+1. Sandwich: 4"white sandwich.toasted
+Toppings:
+ - meat
+ - lettuce
+ - Extra Premium tomoatoes
+Price: $7.55
+2. Drink: medium fanta - $2.50
+3. Chips: bbq lays Chips - $&.2f
+4. Sandwich: 12"wheat sandwich.
+Toppings:
+ - cucumber
+Price: $8.50
+5. Drink: medium coke - $2.50
+6. Chips: kettle chips Chips - $&.2f
+Total: $24.05
+Thank you, come again.
