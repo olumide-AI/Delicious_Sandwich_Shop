@@ -1,0 +1,9 @@
+DELI-cious Sandwich Shop
+303 2nd st, San Francisco, CA
+Date: 05/25/2025 06:42 AM
+
+--- Order Summary ---
+1. Drink: large coconut water - $3.00
+2. Chips: popcorn Chips - $&.2f
+Total: $4.50
+Thank you, come again.
