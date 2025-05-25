@@ -47,7 +47,16 @@ public class Application {
                     System.out.println("Sandwich has been added to order");
                     break;
                 case "2":
-                    Drink drink
+                    Drink drink = buildUserDrink();
+                    order.addItem(drink);
+                    System.out.println("Your drink has been added to your order");
+                    break;
+                case "3":
+                    Chip chip = buildUserChip();
+                    order.addItem(chip);
+                    System.out.println("Your chips has been added to your order");
+                    break;
+                case "4"
 
             }
         }
@@ -117,5 +126,11 @@ public class Application {
             }
         }
         return new Drink(userInput, drinkCupSize);
+    }
+
+    private static Chip buildUserChip(){
+        System.out.println("Enter the chip type you wanr. FYI we only have one size and they're all the same price");
+        String userInput = scanner.nextLine().toLowerCase().trim();
+        return new Chip(userInput);
     }
 }
