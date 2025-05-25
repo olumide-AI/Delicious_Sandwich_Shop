@@ -197,4 +197,79 @@ public class Application {
             System.out.println("Order has been canceled");
         }
     }
+    private static void customizeToppings(Sandwich sandwich){
+        System.out.println("\n--- Available Toppings ---");
+
+        System.out.println("\nRegular Toppings (Included):");
+        System.out.println("- lettuce, peppers, onions, tomatoes, jalapeños, cucumbers, pickles, guacamole, mushrooms");
+
+        System.out.println("\nSauces (Included):");
+        System.out.println("- mayo, mustard, ketchup, ranch, thousand islands, vinaigrette");
+
+        System.out.println("\nSides (Included):");
+        System.out.println("- au jus, sauce");
+
+        System.out.println("\nPremium Meats:");
+        System.out.println("- steak, ham, salami, roast beef, chicken, bacon");
+        System.out.println("  • Prices: 4\" = $1.00, 8\" = $2.00, 12\" = $3.00");
+        System.out.println("  • Extra: +$0.50, $1.00, $1.50");
+
+        System.out.println("\nPremium Cheeses:");
+        System.out.println("- american, provolone, cheddar, swiss");
+        System.out.println("  • Prices: 4\" = $0.75, 8\" = $1.50, 12\" = $2.25");
+        System.out.println("  • Extra: +$0.30, $0.60, $0.90");
+
+        while (true){
+            System.out.println("\n--- Topping Customization ---");
+            System.out.println("1) Add regular topping");
+            System.out.println("2) Add premium topping (meat/cheese)");
+            System.out.println("3) Add sauce");
+            System.out.println("4) Add side");
+            System.out.println("5) Remove topping");
+            System.out.println("0) Done customizing");
+            String choice = scanner.nextLine().trim();
+
+            switch (choice) {
+                case "1":
+                    System.out.print("Enter topping name: ");
+                    String toppingName = scanner.nextLine().trim();
+                    sandwich.addTopping(new RegularTopping(toppingName));
+                    break;
+
+                case "2":
+                    System.out.print("Enter topping name: ");
+                    String premiumName = scanner.nextLine().trim();
+                    System.out.print("Meat or cheese? ");
+                    String category = scanner.nextLine().trim();
+                    System.out.print("Add extra? (yes/no): ");
+                    boolean extra = scanner.nextLine().trim().equalsIgnoreCase("yes");
+                    sandwich.addTopping(new PremiumTopping(premiumName, category, extra));
+                    break;
+
+                case "3":
+                    System.out.print("Enter sauce name (e.g., mustard, ranch): ");
+                    String sauce = scanner.nextLine().trim();
+                    sandwich.addTopping(new RegularTopping(sauce));
+                    break;
+
+                case "4":
+                    System.out.print("Enter side name (e.g., au jus, sauce): ");
+                    String side = scanner.nextLine().trim();
+                    sandwich.addTopping(new RegularTopping(side));
+                    break;
+
+                case "5":
+                    System.out.print("Enter topping name to remove: ");
+                    String toRemove = scanner.nextLine().trim();
+                    sandwich.removeTopping(toRemove);
+                    break;
+
+                case "0":
+                    return;
+
+                default:
+                    System.out.println(" Invalid input. Please choose again.");
+            }
+        }
+    }
 }
