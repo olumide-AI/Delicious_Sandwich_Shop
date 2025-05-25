@@ -1,5 +1,6 @@
 package com.delicioussandwich.app;
 
+import com.delicioussandwich.logic.ReceiptFile;
 import com.delicioussandwich.model.*;
 
 import java.util.Scanner;
@@ -56,7 +57,12 @@ public class Application {
                     order.addItem(chip);
                     System.out.println("Your chips has been added to your order");
                     break;
-                case "4"
+                case "4":
+                    userCheckout(order);
+                    isOrdering = false;
+                    break;
+                case "0":
+
 
             }
         }
@@ -132,5 +138,23 @@ public class Application {
         System.out.println("Enter the chip type you wanr. FYI we only have one size and they're all the same price");
         String userInput = scanner.nextLine().toLowerCase().trim();
         return new Chip(userInput);
+    }
+
+    private static void userCheckout(Order order){
+        System.out.println("Order Summary:");
+        System.out.println(order.getSummary());
+        System.out.println();
+
+        System.out.println("Select '1' to confirm order");
+        System.out.println("Select '2' to cancel order and return to home page");
+
+        String userInput = scanner.nextLine().toLowerCase().trim();
+        if(userInput.equalsIgnoreCase("1")){
+            ReceiptFile.saveReceiptToFile(order);
+            System.out.println("Order saved. Returning to home");
+        }
+        else {
+            System.out.println("Order has been canceled");
+        }
     }
 }
