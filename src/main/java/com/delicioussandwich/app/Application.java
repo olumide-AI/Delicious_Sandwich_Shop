@@ -35,8 +35,8 @@ public class Application {
     }
     private static void homeScreen(){
         System.out.println("Welcome to our delicious sandwich shop");
-        System.out.println("Select '1' for new order");
-        System.out.println("Select '0' to exit application ");
+        System.out.println("Select [1] for new order");
+        System.out.println("Select [0] to exit application ");
     }
 
     private static void newOrder(){
@@ -81,22 +81,22 @@ public class Application {
 
     private static void orderScreen(){
         System.out.println("Welcome to our order screen");
-        System.out.println("Select '1' to Add a sandwich");
-        System.out.println("Select '2' to Add a drink");
-        System.out.println("Select '3' to Add a chip");
-        System.out.println("Select '4' to checkout sandwich");
-        System.out.println("Select '0' to cancel order");
+        System.out.println("Select [1] to Add a sandwich");
+        System.out.println("Select [2] to Add a drink");
+        System.out.println("Select [3] to Add a chip");
+        System.out.println("Select [4] to checkout sandwich");
+        System.out.println("Select [0] to cancel order");
     }
 
     private static Sandwich buildUserSandwich(){
         System.out.println("Let's make your sandwich according to what you like");
         System.out.println("========");
-        System.out.println("Select '1' to build your own");
-        System.out.println("Select '2' for a Signature BLT");
-        System.out.println("Select '3' for a Signature Philly Cheese Steak");
-        System.out.println("Select '4' for a Signature Turkey Club");
-        System.out.println("Select '5' for a Signature Buffalo Chicken");
-        System.out.println("Select '6' for a Signature Maaike Special");
+        System.out.println("Select [1] to build your own");
+        System.out.println("Select [2] for a Signature BLT");
+        System.out.println("Select [3] for a Signature Philly Cheese Steak");
+        System.out.println("Select [4] for a Signature Turkey Club");
+        System.out.println("Select [5] for a Signature Buffalo Chicken");
+        System.out.println("Select [6] for a Signature Maaike Special");
 
         String userSandwichChoice = scanner.nextLine().trim();
 
@@ -133,7 +133,7 @@ public class Application {
                 }
                 boolean isToasted = false;
                 while (true){
-                    System.out.println("Do you want it toasted? (yes/no): ");
+                    System.out.println("Do you want it toasted? [YES or NO]: ");
                     String toastInput = scanner.nextLine().toLowerCase().trim();
                     if(toastInput.equalsIgnoreCase("yes")){
                         isToasted = true;
@@ -142,13 +142,13 @@ public class Application {
                         break;
                     }
                     else {
-                        System.out.println("Please enter 'yes or 'no'. ");
+                        System.out.println("Please enter [YES or NO]. ");
                     }
                 }
                 sandwich = new Sandwich(sandwichSize, breadType, isToasted);
                 break;
         }
-        System.out.println("Would you like to customize toppings? (yes/no): ");
+        System.out.println("Would you like to customize toppings? [YES or NO]: ");
         if(scanner.nextLine().trim().equalsIgnoreCase("yes"))
         {
             customizeToppings(sandwich);
@@ -162,7 +162,7 @@ public class Application {
         String drinkCupSize = "";
 
         while(true){
-            System.out.println("Choose cup size (small, medium or large): ");
+            System.out.println("Choose cup size [Small, ,Medium or Large]: ");
             drinkCupSize = scanner.nextLine().toLowerCase().trim();
             if((drinkCupSize.equalsIgnoreCase("small")) ||drinkCupSize.equalsIgnoreCase("medium") || drinkCupSize.equalsIgnoreCase("large")){
                 break;
@@ -185,8 +185,8 @@ public class Application {
         System.out.println(order.getSummary());
         System.out.println();
 
-        System.out.println("Select '1' to confirm order");
-        System.out.println("Select '2' to cancel order and return to home page");
+        System.out.println("Select [1] to confirm order");
+        System.out.println("Select [2] to cancel order and return to home page");
 
         String userInput = scanner.nextLine().toLowerCase().trim();
         if(userInput.equalsIgnoreCase("1")){
