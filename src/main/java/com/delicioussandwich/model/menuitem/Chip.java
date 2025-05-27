@@ -12,6 +12,6 @@ public class Chip extends MenuItem {
 
     @Override
     public String toString(){
-        return "Chips: " + getName() + " - $" +String.format("&.2f", getPrice());
+        return "Chips: " + getName() + " - $" +String.format("%.2f", getPrice());
     }
 }
