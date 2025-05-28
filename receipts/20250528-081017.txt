@@ -1,0 +1,19 @@
+DELI-cious Sandwich Shop
+303 2nd st, San Francisco, CA
+Date: 05/28/2025 08:10 AM
+
+--- Order Summary ---
+1. Sandwich: Buffalo Chicken
+Toppings:
+ - Chicken
+ - Blue Cheese
+ - Lettuce
+ - Buffalo Sauce
+ - Ranch
+ - Steak
+ - mustard
+ Sandwich Price: $12.50
+2. Chips: bbq type - $1.50
+3. Drink: small fanta - $2.00
+Total Price: $16.00
+Thank you, come again.
