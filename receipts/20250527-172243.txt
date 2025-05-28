@@ -1,0 +1,16 @@
+DELI-cious Sandwich Shop
+303 2nd st, San Francisco, CA
+Date: 05/27/2025 05:22 PM
+
+--- Order Summary ---
+1. Sandwich: 8" wheat sandwich [toasted]
+Toppings:
+ - lettuce
+ - tomatoes
+ - Extra Premium Chicken
+ - Extra Premium provolone
+ - mustard
+ - au jus
+ Sandwich Price: $12.10
+Total Price: $12.10
+Thank you, come again.

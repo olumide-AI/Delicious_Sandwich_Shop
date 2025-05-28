@@ -74,7 +74,7 @@ public class Order {
             summary += count + ". " + item.toString() + "\n";
             count++;
         }
-        summary += "Total: $" + String.format("%.2f", calcTotal());
+        summary += "Total Price: $" + String.format("%.2f", calcTotal());
         return summary;
     }
 

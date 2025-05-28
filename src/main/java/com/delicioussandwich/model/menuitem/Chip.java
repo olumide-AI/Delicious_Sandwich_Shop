@@ -7,7 +7,7 @@ public class Chip extends MenuItem {
 
 
     public Chip(String flavor) {
-        super(flavor + " Chips", CHIP_PRICE);
+        super(flavor, CHIP_PRICE);
     }
 
     @Override

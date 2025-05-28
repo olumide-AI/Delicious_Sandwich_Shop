@@ -189,12 +189,14 @@ public class Application {
     }
 
     private static void userCheckout(Order order){
-        System.out.println("Order Summary:");
         System.out.println(order.getSummary());
         System.out.println();
-
-        System.out.println("Select [1] to confirm order");
-        System.out.println("Select [2] to cancel order and return to home page");
+        System.out.println("+----------------------------------------------------+");
+        System.out.println("Please Select an Option Below                        |");
+        System.out.println("+----------------------------------------------------+");
+        System.out.println("| Select [1] to Confirm Order                        |");
+        System.out.println("| Select [2] to cancel order and return to home page |");
+        System.out.println("+----------------------------------------------------+");
 
         String userInput = scanner.nextLine().toLowerCase().trim();
         if(userInput.equalsIgnoreCase("1")){

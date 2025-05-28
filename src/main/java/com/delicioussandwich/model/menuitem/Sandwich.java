@@ -23,9 +23,9 @@ public class Sandwich extends MenuItem {
     }
     //Helper function for the constructor
     private static String buildName(String sandwichSize, String breadType, boolean toastedBread){
-        String name = sandwichSize + "\"" + breadType + " sandwich.";
+        String name = sandwichSize + "\" " + breadType + " sandwich";
         if(toastedBread == true){
-            name += "toasted";
+            name += " [toasted]";
         }
         return name;
     }
@@ -117,7 +117,7 @@ public class Sandwich extends MenuItem {
             }
         }
         double totalPrice = getPrice();
-        description += "Price: $" + String.format("%.2f", totalPrice);
+        description += " Sandwich Price: $" + String.format("%.2f", totalPrice);
         return description;
     }
 }
