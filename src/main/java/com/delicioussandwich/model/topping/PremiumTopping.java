@@ -68,7 +68,7 @@ public class PremiumTopping extends Topping {
                 }
             }
         }
-        System.out.println("Not a category");
+        //System.out.println("Not a category");
         return 0.0;
     }
     @Override

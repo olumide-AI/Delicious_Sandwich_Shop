@@ -1,5 +1,8 @@
 package com.delicioussandwich.ui;
 
+/**
+ * Util class for rendering application menus to the console
+ */
 public class Screen {
     public static void homeScreen(){
         System.out.println("+----------------------------------------+");

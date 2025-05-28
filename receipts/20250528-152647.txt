@@ -1,0 +1,24 @@
+DELI-cious Sandwich Shop
+303 2nd st, San Francisco, CA
+Date: 05/28/2025 03:26 PM
+
+--- Order Summary ---
+1. Sandwich: 12" white sandwich [toasted]
+Toppings:
+ - Extra Premium Steak
+ - Extra Premium Provolone
+ - ranch
+ - au jus
+ Sandwich Price: $16.15
+2. Sandwich: BLT
+Toppings:
+ - Bacon
+ - Cheddar
+ - Lettuce
+ - Tomato
+ - Ranch
+ Sandwich Price: $9.00
+3. Drink: large dr pepper - $3.00
+4. Chips: bbq lays - $1.50
+Total Price: $29.65
+Thank you, come again.

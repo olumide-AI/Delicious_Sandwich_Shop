@@ -69,6 +69,46 @@ This capstone project simulates a real-world point-of-sale system for a sandwich
 - Clean CLI interaction
 - Organized by OOP best practices
 
+## Home Screen 
+- Select [1] to place a new order 
+- Select [0] to exit the application 
+
+*Here is a image of my Home Screen*
+
+![HomeScreen](images/homescreen.png)
+
+## Order Screen
+- Select [1] to Add a sandwich 
+- Select [2] to add a drink 
+- Select [3] to add a cup 
+- Select [4] to checkout a sandwich
+- Select [5] to cancel an order
+
+*Here is a image of my Order Screen*
+
+![OrderScreen](images/orderscreen.png)
+
+## Build You
+- Select [1] to Add a sandwich
+- Select [2] to add a drink
+- Select [3] to add a cup
+- Select [4] to checkout a sandwich
+- Select [5] to cancel an order
+
+*Here is a image of my Order Screen*
+![HomeScreen](images/orderscreen.png)
+
+## Checkout Screen
+- Contains an Order Summary 
+- List of items selected 
+- Price and Total Price of items selected
+- Options to confirm or cancel order 
+
+*Here is a image of my Checkout Screen*
+
+![CheckoutScreen](images/checkoutscreen.png)
+
+
 ---
 
 ## Technologies Used
@@ -84,8 +124,9 @@ This capstone project simulates a real-world point-of-sale system for a sandwich
 ## Installation
 
 1. Clone the repo:
-   ```bash
+   ```
    git clone https://github.com/your-username/delicious-sandwich-shop.git
+   
 2. Open in IntelliJ as a Maven project
 
 3. Compile and run
@@ -94,15 +135,7 @@ This capstone project simulates a real-world point-of-sale system for a sandwich
 
 ## Folder Structure
 
-src/
-├── main/
-│   └── java/com/delicioussandwich/
-│       ├── app/              # Main entry point (Application.java)
-│       ├── logic/            # Receipt generation & file saving
-│       └── model/            # Core classes: Sandwich, Topping, Drink, etc.
-└── test/
-└── java/com/delicioussandwich/
-└── model/            # Unit tests
+[Screenshot of my folder structure](#)
 
 
  ## OOP Concepts
