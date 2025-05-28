@@ -8,15 +8,19 @@ import com.delicioussandwich.model.signaturesandwiches.*;
 import com.delicioussandwich.model.topping.PremiumTopping;
 import com.delicioussandwich.model.topping.RegularTopping;
 import com.delicioussandwich.ui.Screen;
-
 import java.util.Scanner;
 
-
-
+/**
+ * Provides ordering workflows: creating new orders, building items,
+ * and handling checkout logic.
+ */
 public class OrderService {
-    public static Scanner scanner = new Scanner(System.in);
-
-    public static void newOrder() {
+    /**
+     * Starts a new order session, displaying the order menu and
+     * responding to user choices until checkout or cancel.
+     * @param scanner shared Scanner for reading user input
+     */
+    public static void newOrder(Scanner scanner) {
         Order order = new Order();
         boolean isOrdering = true;
 
@@ -26,22 +30,22 @@ public class OrderService {
 
             switch (userInput) {
                 case "1":
-                    Sandwich sandwich = buildUserSandwich();
+                    Sandwich sandwich = buildUserSandwich(scanner);
                     order.addItem(sandwich);
                     System.out.println(sandwich.getName() + " Sandwich has been added to order");
                     break;
                 case "2":
-                    Drink drink = buildUserDrink();
+                    Drink drink = buildUserDrink(scanner);
                     order.addItem(drink);
                     System.out.println(drink.getName() + " has been added to your order");
                     break;
                 case "3":
-                    Chip chip = buildUserChip();
+                    Chip chip = buildUserChip(scanner);
                     order.addItem(chip);
                     System.out.println(chip.getName() + " has been added to your order");
                     break;
                 case "4":
-                    userCheckout(order);
+                    userCheckout(order, scanner);
                     isOrdering = false;
                     break;
                 case "0":
@@ -56,7 +60,7 @@ public class OrderService {
         }
     }
 
-    public static Sandwich buildUserSandwich() {
+    public static Sandwich buildUserSandwich(Scanner scanner) {
         System.out.println("+------------------------------------------------+");
         System.out.println("| Let's Build your Sandwich.                     |");
         System.out.println("+------------------------------------------------+");
@@ -124,7 +128,7 @@ public class OrderService {
         return sandwich;
     }
 
-    public static Drink buildUserDrink() {
+    public static Drink buildUserDrink(Scanner scanner) {
         System.out.println("Enter drink of choice: ");
         String userInput = scanner.nextLine().toLowerCase().trim();
         String drinkCupSize;
@@ -141,13 +145,13 @@ public class OrderService {
         return new Drink(userInput, drinkCupSize);
     }
 
-    public static Chip buildUserChip() {
+    public static Chip buildUserChip(Scanner scanner) {
         System.out.println("Enter the chip type and flavour you want. FYI we only have one size and they're all the same price");
         String userInput = scanner.nextLine().toLowerCase().trim();
         return new Chip(userInput);
     }
 
-    public static void userCheckout(Order order) {
+    public static void userCheckout(Order order, Scanner scanner) {
         System.out.println(order.getSummary());
         System.out.println();
         System.out.println("+----------------------------------------------------+");
@@ -166,7 +170,7 @@ public class OrderService {
         }
     }
 
-    public static void customizeToppings(Sandwich sandwich) {
+    public static void customizeToppings(Sandwich sandwich, Scanner scanner) {
         System.out.println("\n--- Available Toppings ---");
 
         System.out.println("\nRegular Toppings (Included):");

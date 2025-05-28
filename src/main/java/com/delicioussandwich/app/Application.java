@@ -3,7 +3,8 @@ package com.delicioussandwich.app;
 import com.delicioussandwich.controller.AppController;
 
 /**
- * Launches the application.
+ * Entry point for the sandwich shop application.
+ * Launches the application controller.
  */
 public class Application {
     public static void main(String[] args) {
