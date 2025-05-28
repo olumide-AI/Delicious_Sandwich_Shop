@@ -10,6 +10,9 @@ import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Responsible for persisting receipts to the file system.
+ */
 public class ReceiptFile {
     private static final String RECEIPT_FOLDER = "receipts";
 

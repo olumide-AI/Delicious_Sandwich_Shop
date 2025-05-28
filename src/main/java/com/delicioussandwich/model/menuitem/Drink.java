@@ -2,14 +2,14 @@ package com.delicioussandwich.model.menuitem;
 
 import com.delicioussandwich.model.abstractclass.MenuItem;
 
-public class Drink extends MenuItem {
-    private String drinkCupSize;
+/**
+ * Represents a drink menu item, with a fixed set of cup sizes and associated prices.
+ * Supports SMALL, MEDIUM, and LARGE sizes.
+ */
 
-    /**
-     *
-     * @param name of the drink
-     * @param drinkCupSize the actually size can be small, medium or large
-     */
+public class Drink extends MenuItem {
+    private final String drinkCupSize;
+
     public Drink(String name, String drinkCupSize) {
         super(drinkCupSize + " " + name, calcPrice(drinkCupSize));
         this.drinkCupSize = drinkCupSize;

@@ -6,6 +6,11 @@ import com.delicioussandwich.model.abstractclass.Topping;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A customizable sandwich menu item.
+ * Supports three fixed sizes (4, 8, 12 inches), choice of bread,
+ * optional toasting, and a list of toppings (regular or premium).
+ */
 public class Sandwich extends MenuItem {
     //Needed Fields
     private String sandwichSize;
@@ -24,12 +29,11 @@ public class Sandwich extends MenuItem {
     //Helper function for the constructor
     private static String buildName(String sandwichSize, String breadType, boolean toastedBread){
         String name = sandwichSize + "\" " + breadType + " sandwich";
-        if(toastedBread == true){
+        if(toastedBread){
             name += " [toasted]";
         }
         return name;
     }
-
 
     //Getters and Setters
     public String getSandwichSize() {
@@ -100,24 +104,23 @@ public class Sandwich extends MenuItem {
         for(Topping topping: toppingList){
             totalToppingPrice += topping.getPrice(sandwichSize);
         }
-        double totalSandwichPrice = regularBreadPrice + totalToppingPrice;
-        return totalSandwichPrice;
+        return regularBreadPrice + totalToppingPrice;
     }
 
     @Override
     public String toString(){
-        String description = "Sandwich: " + getName() + "\n";
-        description += "Toppings:\n";
+        StringBuilder description = new StringBuilder("Sandwich: " + getName() + "\n");
+        description.append("Toppings:\n");
         if(toppingList.isEmpty()){
-            description += " (none)\n";
+            description.append(" (none)\n");
         }
         else{
             for (Topping topping: toppingList){
-                description += " - " + topping.getName() + "\n";
+                description.append(" - ").append(topping.getName()).append("\n");
             }
         }
         double totalPrice = getPrice();
-        description += " Sandwich Price: $" + String.format("%.2f", totalPrice);
-        return description;
+        description.append(" Sandwich Price: $").append(String.format("%.2f", totalPrice));
+        return description.toString();
     }
 }
