@@ -34,9 +34,12 @@ public class Application {
         }
     }
     private static void homeScreen(){
-        System.out.println("Welcome to our delicious sandwich shop");
-        System.out.println("Select [1] for new order");
-        System.out.println("Select [0] to exit application ");
+        System.out.println("+----------------------------------------+");
+        System.out.println("| Welcome to our Delicious Sandwich Shop |");
+        System.out.println("+----------------------------------------+");
+        System.out.println("| Select [1] for New Order               |");
+        System.out.println("| Select [0] to Exit Application         |");
+        System.out.println("+----------------------------------------+");
     }
 
     private static void newOrder(){
@@ -51,17 +54,17 @@ public class Application {
                 case "1":
                     Sandwich sandwich = buildUserSandwich();
                     order.addItem(sandwich);
-                    System.out.println("Sandwich has been added to order");
+                    System.out.println( sandwich.getName() +  " Sandwich has been added to order");
                     break;
                 case "2":
                     Drink drink = buildUserDrink();
                     order.addItem(drink);
-                    System.out.println("Your drink has been added to your order");
+                    System.out.println( drink.getName() +  " has been added to your order");
                     break;
                 case "3":
                     Chip chip = buildUserChip();
                     order.addItem(chip);
-                    System.out.println("Your chips has been added to your order");
+                    System.out.println( chip.getName() + " has been added to your order");
                     break;
                 case "4":
                     userCheckout(order);
@@ -80,23 +83,28 @@ public class Application {
     }
 
     private static void orderScreen(){
-        System.out.println("Welcome to our order screen");
-        System.out.println("Select [1] to Add a sandwich");
-        System.out.println("Select [2] to Add a drink");
-        System.out.println("Select [3] to Add a chip");
-        System.out.println("Select [4] to checkout sandwich");
-        System.out.println("Select [0] to cancel order");
+        System.out.println("+----------------------------------------+");
+        System.out.println("| Welcome to our order screen            |");
+        System.out.println("+----------------------------------------+");
+        System.out.println("| Select [1] to Add a sandwich           |");
+        System.out.println("| Select [2] to Add a drink              |");
+        System.out.println("| Select [3] to Add a chip               |");
+        System.out.println("| Select [4] to checkout sandwich        |");
+        System.out.println("| Select [0] to cancel order             |");
+        System.out.println("+----------------------------------------+");
     }
 
     private static Sandwich buildUserSandwich(){
-        System.out.println("Let's make your sandwich according to what you like");
-        System.out.println("========");
-        System.out.println("Select [1] to build your own");
-        System.out.println("Select [2] for a Signature BLT");
-        System.out.println("Select [3] for a Signature Philly Cheese Steak");
-        System.out.println("Select [4] for a Signature Turkey Club");
-        System.out.println("Select [5] for a Signature Buffalo Chicken");
-        System.out.println("Select [6] for a Signature Maaike Special");
+        System.out.println("+------------------------------------------------+");
+        System.out.println("| Let's Build your Sandwich.                     |");
+        System.out.println("+------------------------------------------------+");
+        System.out.println("| Select [1] to build your own                   |");
+        System.out.println("| Select [2] for a Signature BLT                 |");
+        System.out.println("| Select [3] for a Signature Philly Cheese Steak |");
+        System.out.println("| Select [4] for a Signature Turkey Club         |");
+        System.out.println("| Select [5] for a Signature Buffalo Chicken     |");
+        System.out.println("| Select [6] for a Signature Maaike Special      |");
+        System.out.println("+------------------------------------------------+");
 
         String userSandwichChoice = scanner.nextLine().trim();
 
@@ -124,12 +132,12 @@ public class Application {
             default:
                 String sandwichSize;
                 while (true){
-                    System.out.println("Enter sandwich size (4,8, or 12 inches): ");
+                    System.out.println("Enter a Sandwich Size [4, 8, or 12 'inches']: ");
                     sandwichSize = scanner.nextLine().trim();
                     if(sandwichSize.equalsIgnoreCase("4") || sandwichSize.equalsIgnoreCase("8") || sandwichSize.equalsIgnoreCase("12")){
                         break;
                     }
-                    System.out.println("Please enter 4 , 8, or 12");
+                    System.out.println("Please enter [4, 8, or 12 'inches']");
                 }
                 boolean isToasted = false;
                 while (true){
@@ -220,13 +228,16 @@ public class Application {
         System.out.println("  • Extra: +$0.30, $0.60, $0.90");
 
         while (true){
-            System.out.println("\n--- Topping Customization ---");
-            System.out.println("1) Add regular topping");
-            System.out.println("2) Add premium topping (meat/cheese)");
-            System.out.println("3) Add sauce");
-            System.out.println("4) Add side");
-            System.out.println("5) Remove topping");
-            System.out.println("0) Done customizing");
+            System.out.println("+-------------------------------------------------+");
+            System.out.println("| Topping Customization                           |");
+            System.out.println("+-------------------------------------------------+");
+            System.out.println("| Select [1] to Add Regular Topping               |");
+            System.out.println("| Select [2] to Add Premium Topping (Meat/Cheese) |");
+            System.out.println("| Select [3] to Add Sauce                         |");
+            System.out.println("| Select [4] to Add Side                          |");
+            System.out.println("| Select [5] to Remove Topping                    |");
+            System.out.println("| Select [0] when Done Customizing                |");
+            System.out.println("+-------------------------------------------------+");
             String choice = scanner.nextLine().trim();
 
             switch (choice) {
@@ -239,9 +250,9 @@ public class Application {
                 case "2":
                     System.out.print("Enter topping name: ");
                     String premiumName = scanner.nextLine().trim();
-                    System.out.print("Meat or cheese? ");
+                    System.out.print("Meat or Cheese? ");
                     String category = scanner.nextLine().trim();
-                    System.out.print("Add extra? (yes/no): ");
+                    System.out.print("Add extra? [YES or NO]: ");
                     boolean extra = scanner.nextLine().trim().equalsIgnoreCase("yes");
                     sandwich.addTopping(new PremiumTopping(premiumName, category, extra));
                     break;
