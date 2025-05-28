@@ -5,6 +5,9 @@ import com.delicioussandwich.model.order.Order;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Responsible for formatting user order into a printable text receipt
+ */
 public class Receipt {
     private static final String RESTAURANT_NAME = "DELI-cious Sandwich Shop";
     private static final String ADDRESS = "303 2nd st, San Francisco, CA";
@@ -16,18 +19,13 @@ public class Receipt {
         return currentTime.format(formatter);
     }
     public static String generateReceipt(Order order){
-        //Use string builder to append receipt info line by line
-        StringBuilder stringBuilderReceipt = new StringBuilder();
-
-        //Append the header of the receipt
-        stringBuilderReceipt.append(RESTAURANT_NAME).append("\n");
-        stringBuilderReceipt.append(ADDRESS).append("\n");
-        stringBuilderReceipt.append("Date: ").append(getCurrentDateAndTime()).append("\n");
-        stringBuilderReceipt.append("\n");
-        //Append recipt infomation
-        stringBuilderReceipt.append(order.getSummary()).append("\n");
-        stringBuilderReceipt.append("Thank you, come again.");
-        return stringBuilderReceipt.toString();
+        return RESTAURANT_NAME + "\n" +
+                ADDRESS + "\n" +
+                "Date: " + getCurrentDateAndTime() + "\n" +
+                "\n" +
+                //Append receipt information
+                order.getSummary() + "\n" +
+                "Thank you, come again.";
 
     }
 
