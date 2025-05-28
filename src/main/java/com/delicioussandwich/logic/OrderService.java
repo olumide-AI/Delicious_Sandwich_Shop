@@ -123,7 +123,7 @@ public class OrderService {
         }
         System.out.println("Would you like to customize toppings? [YES or NO]: ");
         if (scanner.nextLine().trim().equalsIgnoreCase("yes")) {
-            customizeToppings(sandwich);
+            customizeToppings(sandwich, scanner);
         }
         return sandwich;
     }
