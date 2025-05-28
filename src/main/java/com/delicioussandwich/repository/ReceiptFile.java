@@ -1,5 +1,6 @@
-package com.delicioussandwich.logic;
+package com.delicioussandwich.repository;
 
+import com.delicioussandwich.logic.Receipt;
 import com.delicioussandwich.model.order.Order;
 
 import java.io.FileWriter;

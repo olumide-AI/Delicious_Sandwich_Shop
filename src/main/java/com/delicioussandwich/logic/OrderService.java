@@ -7,6 +7,7 @@ import com.delicioussandwich.model.order.Order;
 import com.delicioussandwich.model.signaturesandwiches.*;
 import com.delicioussandwich.model.topping.PremiumTopping;
 import com.delicioussandwich.model.topping.RegularTopping;
+import com.delicioussandwich.repository.ReceiptFile;
 import com.delicioussandwich.ui.Screen;
 import java.util.Scanner;
 
@@ -163,7 +164,7 @@ public class OrderService {
 
         String userInput = scanner.nextLine().toLowerCase().trim();
         if (userInput.equalsIgnoreCase("1")) {
-            ReceiptFile.saveReceiptToFile(order);
+            ReceiptFile.saveReceiptToFile( order);
             System.out.println("Order saved. Returning to home");
         } else {
             System.out.println("Order has been canceled");
