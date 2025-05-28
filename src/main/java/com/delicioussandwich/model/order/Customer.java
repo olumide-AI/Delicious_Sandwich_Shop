@@ -1,9 +1,12 @@
 package com.delicioussandwich.model.order;
+/**
+ * Represents a customer placing an order, identified by name and phone number.
+ */
 
 public class Customer {
     //Properties
-    private String name;
-    private String phoneNumber;
+    private final String name;
+    private final String phoneNumber;
 
     //Constructor
     public Customer(String name, String phoneNumber) {
@@ -15,18 +18,10 @@ public class Customer {
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
     @Override
     public String toString(){
         return name + " (" + phoneNumber + ")";

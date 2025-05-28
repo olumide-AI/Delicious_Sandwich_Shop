@@ -65,17 +65,17 @@ public class Order {
      * @return a order summary toString
      */
     public String getSummary(){
-        String summary = "--- Order Summary ---\n";
+        StringBuilder summary = new StringBuilder("--- Order Summary ---\n");
         if(customer != null){
-            summary += "Customer: " + customer.toString() + "\n";
+            summary.append("Customer: ").append(customer.toString()).append("\n");
         }
         int count = 1;
         for (MenuItem item: items){
-            summary += count + ". " + item.toString() + "\n";
+            summary.append(count).append(". ").append(item.toString()).append("\n");
             count++;
         }
-        summary += "Total Price: $" + String.format("%.2f", calcTotal());
-        return summary;
+        summary.append("Total Price: $").append(String.format("%.2f", calcTotal()));
+        return summary.toString();
     }
 
 
