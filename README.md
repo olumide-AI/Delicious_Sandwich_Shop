@@ -88,15 +88,24 @@ This capstone project simulates a real-world point-of-sale system for a sandwich
 
 ![OrderScreen](images/orderscreen.png)
 
-## Build You
-- Select [1] to Add a sandwich
-- Select [2] to add a drink
-- Select [3] to add a cup
-- Select [4] to checkout a sandwich
-- Select [5] to cancel an order
+## Build Your sandwich 
+- Option to build your sandwich
+- Option to select Signature Sandwiches
 
-*Here is a image of my Order Screen*
-![HomeScreen](images/orderscreen.png)
+*Here is a image of my Sandwich Screen*
+
+![HomeScreen](images/buildsandwich.png)
+
+## Customize Topping Screen
+- Select [1] to Add a regular topping
+- Select [2] to add a premium topping
+- Select [3] to add a sauce
+- Select [4] to add a side
+- Select [5] to remove toppings
+- Select [0] when done customizing
+
+*Here is a image of my Topping Screen*
+![HomeScreen](images/customizetopping.png)
 
 ## Checkout Screen
 - Contains an Order Summary 
