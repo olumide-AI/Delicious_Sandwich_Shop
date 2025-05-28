@@ -42,7 +42,7 @@ public class PremiumTopping extends Topping {
         sandwichSize = sandwichSize.trim();
         if (toppingCategory.equalsIgnoreCase("meat")){
             if(sandwichSize.equalsIgnoreCase("4")){
-                if(extraTopping == true){
+                if(extraTopping){
                     return 1.50;
                 }
                 else {

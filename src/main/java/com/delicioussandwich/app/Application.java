@@ -8,6 +8,7 @@ import com.delicioussandwich.model.order.Order;
 import com.delicioussandwich.model.signaturesandwiches.*;
 import com.delicioussandwich.model.topping.PremiumTopping;
 import com.delicioussandwich.model.topping.RegularTopping;
+import com.delicioussandwich.ui.Screen;
 
 import java.util.Scanner;
 
@@ -17,7 +18,7 @@ public class Application {
     public static void main(String[] args) {
         boolean isRunning = true;
         while ((isRunning)){
-            homeScreen();
+            Screen.homeScreen();
             String userInput = scanner.nextLine().toLowerCase().trim();
 
             switch (userInput){
@@ -33,21 +34,14 @@ public class Application {
             }
         }
     }
-    private static void homeScreen(){
-        System.out.println("+----------------------------------------+");
-        System.out.println("| Welcome to our Delicious Sandwich Shop |");
-        System.out.println("+----------------------------------------+");
-        System.out.println("| Select [1] for New Order               |");
-        System.out.println("| Select [0] to Exit Application         |");
-        System.out.println("+----------------------------------------+");
-    }
+
 
     private static void newOrder(){
         Order order = new Order();
         boolean isOrdering = true;
 
         while(isOrdering){
-            orderScreen();
+            Screen.orderScreen();
             String userInput = scanner.nextLine().toLowerCase().trim();
 
             switch (userInput){
@@ -82,17 +76,6 @@ public class Application {
         }
     }
 
-    private static void orderScreen(){
-        System.out.println("+----------------------------------------+");
-        System.out.println("| Welcome to our order screen            |");
-        System.out.println("+----------------------------------------+");
-        System.out.println("| Select [1] to Add a sandwich           |");
-        System.out.println("| Select [2] to Add a drink              |");
-        System.out.println("| Select [3] to Add a chip               |");
-        System.out.println("| Select [4] to checkout sandwich        |");
-        System.out.println("| Select [0] to cancel order             |");
-        System.out.println("+----------------------------------------+");
-    }
 
     private static Sandwich buildUserSandwich(){
         System.out.println("+------------------------------------------------+");
