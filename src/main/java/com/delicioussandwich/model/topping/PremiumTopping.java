@@ -20,6 +20,10 @@ public class PremiumTopping extends Topping {
 
     @Override
     public double getPrice(String sandwichSize) {
+        if (!sandwichSize.equals("4") && !sandwichSize.equals("8") && !sandwichSize.equals("12")){
+            throw new IllegalArgumentException("Invalid sandwich size: " + sandwichSize +
+                    " (must be '4', '8', or '12')");
+        }
         sandwichSize = sandwichSize.trim();
         if (toppingCategory.equalsIgnoreCase("meat")){
             if(sandwichSize.equalsIgnoreCase("4")){
