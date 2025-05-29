@@ -1,0 +1,15 @@
+DELI-cious Sandwich Shop
+303 2nd st, San Francisco, CA
+Date: 05/29/2025 04:42 PM
+
+--- Order Summary ---
+1. Sandwich: 4" white sandwich [toasted]
+Toppings:
+ - Lettuce
+ - Tomatoes
+ - Extra Premium steak
+ Sandwich Price: $7.00
+2. Drink: medium Lemonade - $2.50
+3. Chips: Doritos - $1.50
+Total Price: $11.00
+Thank you, come again.
