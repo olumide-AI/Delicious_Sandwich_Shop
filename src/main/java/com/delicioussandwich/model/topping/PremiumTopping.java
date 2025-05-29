@@ -20,12 +20,23 @@ public class PremiumTopping extends Topping {
 
     @Override
     public double getPrice(String sandwichSize) {
+        //Validate whether category is meat or cheese
+        if (!toppingCategory.equalsIgnoreCase("meat") && !toppingCategory.equalsIgnoreCase("cheese")){
+            throw new IllegalArgumentException("Invalid topping category: " + toppingCategory +
+                    " (must be 'meat' or 'cheese')");
+        }
+        //Remove any extra spaces
+        sandwichSize = sandwichSize.trim();
+
+        //Validate the right size
         if (!sandwichSize.equals("4") && !sandwichSize.equals("8") && !sandwichSize.equals("12")){
             throw new IllegalArgumentException("Invalid sandwich size: " + sandwichSize +
                     " (must be '4', '8', or '12')");
         }
-        sandwichSize = sandwichSize.trim();
+
+        //Calculate price based on sandwich size and topping category
         if (toppingCategory.equalsIgnoreCase("meat")){
+            //Meat price table
             if(sandwichSize.equalsIgnoreCase("4")){
                 if(extraTopping){
                     return 1.50;
@@ -48,7 +59,9 @@ public class PremiumTopping extends Topping {
                     return 3.00;
                 }
             }
+            //If category is cheese
         } else if (toppingCategory.equalsIgnoreCase("cheese")) {
+            //Cheese Price table
             if(sandwichSize.equalsIgnoreCase("4")){
                 if(extraTopping){
                     return 1.05;
@@ -63,7 +76,7 @@ public class PremiumTopping extends Topping {
                 else {
                     return 1.50;
                 }
-            } else if (sandwichSize.equalsIgnoreCase("12")) {
+            } else {
                 if(extraTopping){
                     return 3.15;
                 }
@@ -72,7 +85,7 @@ public class PremiumTopping extends Topping {
                 }
             }
         }
-        //System.out.println("Not a category");
+        //So compiler can work, avoid java error
         return 0.0;
     }
     @Override
