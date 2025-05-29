@@ -34,25 +34,30 @@ public class OrderService {
 
             switch (userInput) {
                 case "1":
+                    //build and add a sandwich
                     Sandwich sandwich = buildUserSandwich(scanner);
                     order.addItem(sandwich);
                     System.out.println(sandwich.getName() + " Sandwich has been added to order");
                     break;
                 case "2":
+                    //build and add a drink
                     Drink drink = buildUserDrink(scanner);
                     order.addItem(drink);
                     System.out.println(drink.getName() + " has been added to your order");
                     break;
                 case "3":
+                    //build and add a chip
                     Chip chip = buildUserChip(scanner);
                     order.addItem(chip);
                     System.out.println(chip.getName() + " has been added to your order");
                     break;
                 case "4":
+                    //checkout the user order
                     userCheckout(order, scanner);
                     isOrdering = false;
                     break;
                 case "0":
+                    //cancel order
                     System.out.println("Order canceled. ");
                     isOrdering = false;
                     break;
@@ -139,29 +144,30 @@ public class OrderService {
     }
 
     public static Drink buildUserDrink(Scanner scanner) {
+        //List of drinks available to order
         List<String> drinks = List.of("Cola", "Lemonade", "Iced Tea", "Coffee", "Water");
         String drinkChoice;
 
-        // 1) pick a drink from the list
+
         while (true) {
+            //prints all items in the list and starts from 1 instead of 0
             System.out.println("\n--- Available Drinks ---");
             for (int i = 0; i < drinks.size(); i++) {
                 System.out.printf("%d) %s%n", i + 1, drinks.get(i));
             }
             System.out.print("Select drink by number: ");
             String input = scanner.nextLine().trim();
-
+            //Validation
             try {
-                int idx = Integer.parseInt(input);
-                if (idx >= 1 && idx <= drinks.size()) {
-                    drinkChoice = drinks.get(idx - 1);
+                int drinkId = Integer.parseInt(input);
+                if (drinkId >= 1 && drinkId <= drinks.size()) {
+                    drinkChoice = drinks.get(drinkId - 1);
                     break;
                 }
             } catch (NumberFormatException _) { }
             System.out.println("Invalid selection. Please enter a number between 1 and " + drinks.size());
         }
-
-        // 2) pick a cup size
+        //Validate cup against rules
         String drinkCupSize;
         while (true) {
             System.out.print("Choose cup size [Small, Medium, Large]: ");
@@ -175,7 +181,8 @@ public class OrderService {
         return new Drink(drinkChoice, drinkCupSize);
     }
     public static Chip buildUserChip(Scanner scanner) {
-        List<String> chips = List.of("bbq", "salted", "cheddar", "sour cream", "jalapeño");
+        //List of all chips
+        List<String> chips = List.of("LAYS", "Pringles", "Sunflower Chips", "Doritos", "Cheetos");
         String chipChoice;
 
         while (true) {
@@ -264,7 +271,7 @@ public class OrderService {
                     System.out.print("Enter premium topping name (e.g., steak, cheddar): ");
                     String premiumName = scanner.nextLine().toLowerCase().trim();
 
-                    // detect category
+                    // Figures out if meat or cheese is the name
                     String category;
                     if (Arrays.asList("steak","ham","salami","roast beef","chicken","bacon")
                             .contains(premiumName)) {
