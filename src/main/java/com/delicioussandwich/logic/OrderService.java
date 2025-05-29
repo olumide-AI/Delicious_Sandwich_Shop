@@ -138,15 +138,11 @@ public class OrderService {
 
         while (true) {
             //prints all items in the list and starts from 1 instead of 0
-            System.out.println("\n--- Available Drinks ---");
-            for (int i = 0; i < drinks.size(); i++) {
-                System.out.printf("%d) %s%n", i + 1, drinks.get(i));
-            }
-            System.out.print("Select drink by number: ");
-            String input = scanner.nextLine().trim();
+           Screen.printDrinkMenu(drinks);
+           String userInput = scanner.nextLine().trim();
             //Validation
             try {
-                int drinkId = Integer.parseInt(input);
+                int drinkId = Integer.parseInt(userInput);
                 if (drinkId >= 1 && drinkId <= drinks.size()) {
                     drinkChoice = drinks.get(drinkId - 1);
                     break;
@@ -156,52 +152,38 @@ public class OrderService {
         }
         //Validate cup against rules
         String drinkCupSize;
-        while (true) {
-            System.out.print("Choose cup size [Small, Medium, Large]: ");
-            drinkCupSize = scanner.nextLine().toLowerCase().trim();
-            if (List.of("small", "medium", "large").contains(drinkCupSize)) {
-                break;
-            }
-            System.out.println("Please select Small, Medium, or Large.");
-        }
+       do {
+           Screen.promptCupSize();
+           drinkCupSize = scanner.nextLine().toLowerCase().trim();
+       }while(!List.of("small", "medium", "large").contains(drinkCupSize));
 
         return new Drink(drinkChoice, drinkCupSize);
     }
     public static Chip buildUserChip(Scanner scanner) {
         //List of all chips
         List<String> chips = List.of("LAYS", "Pringles", "Sunflower Chips", "Doritos", "Cheetos");
-        String chipChoice;
+        String userChipChoice;
 
         while (true) {
-            System.out.println("\n--- Available Chips ---");
-            for (int i = 0; i < chips.size(); i++) {
-                System.out.printf("%d) %s%n", i + 1, chips.get(i));
-            }
-            System.out.print("Select chip by number: ");
-            String input = scanner.nextLine().trim();
+            Screen.printChipMenu(chips);
+            String userInput = scanner.nextLine().toLowerCase().trim();
 
             try {
-                int idx = Integer.parseInt(input);
-                if (idx >= 1 && idx <= chips.size()) {
-                    chipChoice = chips.get(idx - 1);
+                int chipId = Integer.parseInt(userInput);
+                if (chipId >= 1 && chipId <= chips.size()) {
+                    userChipChoice = chips.get(chipId - 1);
                     break;
                 }
             } catch (NumberFormatException _) { }
             System.out.println("Invalid selection. Please enter a number between 1 and " + chips.size());
         }
 
-        return new Chip(chipChoice);
+        return new Chip(userChipChoice);
     }
 
     public static void userCheckout(Order order, Scanner scanner) {
         System.out.println(order.getSummary());
-        System.out.println();
-        System.out.println("+----------------------------------------------------+");
-        System.out.println("Please Select an Option Below                        |");
-        System.out.println("+----------------------------------------------------+");
-        System.out.println("| Select [1] to Confirm Order                        |");
-        System.out.println("| Select [2] to cancel order and return to home page |");
-        System.out.println("+----------------------------------------------------+");
+        Screen.printCheckoutMenu();
 
         String userInput = scanner.nextLine().toLowerCase().trim();
         if (userInput.equalsIgnoreCase("1")) {
