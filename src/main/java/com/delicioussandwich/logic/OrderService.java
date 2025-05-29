@@ -1,5 +1,6 @@
 package com.delicioussandwich.logic;
 
+
 import com.delicioussandwich.model.menuitem.Chip;
 import com.delicioussandwich.model.menuitem.Drink;
 import com.delicioussandwich.model.menuitem.Sandwich;
@@ -70,27 +71,16 @@ public class OrderService {
     }
 
     public static Sandwich buildUserSandwich(Scanner scanner) {
-        System.out.println("+------------------------------------------------+");
-        System.out.println("| Let's Build your Sandwich.                     |");
-        System.out.println("+------------------------------------------------+");
-        System.out.println("| Select [1] to build your own                   |");
-        System.out.println("| Select [2] for a Signature BLT                 |");
-        System.out.println("| Select [3] for a Signature Philly Cheese Steak |");
-        System.out.println("| Select [4] for a Signature Turkey Club         |");
-        System.out.println("| Select [5] for a Signature Buffalo Chicken     |");
-        System.out.println("| Select [6] for a Signature Maaike Special      |");
-        System.out.println("+------------------------------------------------+");
-
+        Screen.buildSandwichMenu();
         String userSandwichChoice = scanner.nextLine().trim();
 
-        List<String> validBreads = List.of("white","wheat","wrap","rye");
+        List<String> availableBreads = List.of("white","wheat","wrap","rye");
         String breadType;
-        while (true) {
-            System.out.print("Choose your bread [White, Wheat, Wrap, Rye]: ");
+        do{
+            Screen.promptBreadType();
             breadType = scanner.nextLine().toLowerCase().trim();
-            if (validBreads.contains(breadType)) break;
-            System.out.println("Please choose one of: " + validBreads);
         }
+        while (!availableBreads.contains(breadType));
 
         Sandwich sandwich;
         switch (userSandwichChoice) {
@@ -112,29 +102,26 @@ public class OrderService {
             case "1":
             default:
                 String sandwichSize;
-                while (true) {
-                    System.out.println("Enter a Sandwich Size [4, 8, or 12 'inches']: ");
+                do {
+                    Screen.promptSandwichSize();
                     sandwichSize = scanner.nextLine().trim();
-                    if (sandwichSize.equalsIgnoreCase("4") || sandwichSize.equalsIgnoreCase("8") || sandwichSize.equalsIgnoreCase("12")) {
-                        break;
-                    }
-                    System.out.println("Please enter [4, 8, or 12 'inches']");
-                }
+                } while (!List.of("4","8","12").contains(sandwichSize));
+
                 boolean isToasted = false;
-                while (true) {
-                    System.out.println("Do you want it toasted? [YES or NO]: ");
-                    String toastInput = scanner.nextLine().toLowerCase().trim();
-                    if (toastInput.equalsIgnoreCase("yes")) {
-                        isToasted = true;
-                        break;
-                    } else if (toastInput.equalsIgnoreCase("no")) {
-                        break;
-                    } else {
-                        System.out.println("Please enter [YES or NO]. ");
-                    }
-                }
+                String toastInput;
+                do {
+                    Screen.promptToasting();
+                    toastInput = scanner.nextLine().toLowerCase().trim();
+                } while (!toastInput.equals("yes") && !toastInput.equals("no"));
+
+                if (toastInput.equals("yes")) isToasted = true;
                 sandwich = new Sandwich(sandwichSize, breadType, isToasted);
-                break;
+
+                Screen.promptCustomizeToppings();
+                if (scanner.nextLine().trim().equalsIgnoreCase("yes")) {
+                    customizeToppings(sandwich, scanner);
+                }
+                return sandwich;
         }
         System.out.println("Would you like to customize toppings? [YES or NO]: ");
         if (scanner.nextLine().trim().equalsIgnoreCase("yes")) {

@@ -1,5 +1,7 @@
 package com.delicioussandwich.ui;
 
+import java.util.List;
+
 /**
  * Util class for rendering application menus to the console
  */
@@ -38,6 +40,61 @@ public class Screen {
         System.out.println("| Select [5] for Signature Buffalo Chicken       |");
         System.out.println("| Select [6] for Signature Maaike Special        |");
         System.out.println("+------------------------------------------------+");
+    }
+
+    public static void printCheckoutMenu() {
+        System.out.println("+----------------------------------------------------+");
+        System.out.println("| Select [1] to Confirm Order                        |");
+        System.out.println("| Select [2] to Cancel and Return to Home            |");
+        System.out.println("+----------------------------------------------------+");
+    }
+
+    public static void printToppingCustomizationMenu() {
+        System.out.println("+-------------------------------------------------+");
+        System.out.println("| Topping Customization                           |");
+        System.out.println("+-------------------------------------------------+");
+        System.out.println("| [1] Add Regular Topping                         |");
+        System.out.println("| [2] Add Premium Topping (Meat/Cheese)           |");
+        System.out.println("| [3] Add Sauce                                   |");
+        System.out.println("| [4] Add Side                                    |");
+        System.out.println("| [5] Remove Topping                              |");
+        System.out.println("| [0] Done Customizing                            |");
+        System.out.println("+-------------------------------------------------+");
+    }
+    public static void promptBreadType() {
+        System.out.print("Choose your bread [White, Wheat, Wrap, Rye]: ");
+    }
+
+    public static void promptSandwichSize() {
+        System.out.print("Enter a Sandwich Size [4, 8, or 12 inches]: ");
+    }
+
+    public static void promptToasting() {
+        System.out.print("Do you want it toasted? [YES or NO]: ");
+    }
+
+    public static void promptCustomizeToppings() {
+        System.out.print("Would you like to customize toppings? [YES or NO]: ");
+    }
+
+    public static void printDrinkMenu(List<String> drinks) {
+        System.out.println("\n--- Available Drinks ---");
+        for (int i = 0; i < drinks.size(); i++) {
+            System.out.printf("%d) %s%n", i + 1, drinks.get(i));
+        }
+        System.out.print("Select drink by number: ");
+    }
+
+    public static void promptCupSize() {
+        System.out.print("Choose cup size [Small, Medium, Large]: ");
+    }
+
+    public static void printChipMenu(List<String> chips) {
+        System.out.println("\n--- Available Chips ---");
+        for (int i = 0; i < chips.size(); i++) {
+            System.out.printf("%d) %s%n", i + 1, chips.get(i));
+        }
+        System.out.print("Select chip by number: ");
     }
 
 
