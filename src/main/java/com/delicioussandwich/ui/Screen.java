@@ -130,6 +130,4 @@ public class Screen {
         System.out.println("  • Prices: 4\" = $0.75, 8\" = $1.50, 12\" = $2.25");
         System.out.println("  • Extra: +$0.30, $0.60, $0.90");
     }
-
-
 }

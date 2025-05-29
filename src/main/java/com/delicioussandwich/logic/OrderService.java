@@ -26,6 +26,7 @@ public class OrderService {
      * @param scanner shared Scanner for reading user input
      */
     public static void newOrder(Scanner scanner) {
+        //Create a new order
         Order order = new Order();
         boolean isOrdering = true;
 
@@ -71,9 +72,11 @@ public class OrderService {
     }
 
     public static Sandwich buildUserSandwich(Scanner scanner) {
+        //Build either a signature or a custom sandwich
         Screen.buildSandwichMenu();
         String userSandwichChoice = scanner.nextLine().trim();
 
+        //Bread selections available
         List<String> availableBreads = List.of("white","wheat","wrap","rye");
         String breadType;
         do{
@@ -82,7 +85,10 @@ public class OrderService {
         }
         while (!availableBreads.contains(breadType));
 
+        //Inialtize a sandwich
         Sandwich sandwich;
+
+        //the signature sandwiches
         switch (userSandwichChoice) {
             case "2":
                 sandwich = new BaconLettuceTomato(breadType);
@@ -99,14 +105,17 @@ public class OrderService {
             case "6":
                 sandwich = new MaaikeSpecial(breadType);
                 break;
+
             case "1":
             default:
+                //Custom sandwich selection
                 String sandwichSize;
                 do {
                     Screen.promptSandwichSize();
                     sandwichSize = scanner.nextLine().trim();
                 } while (!List.of("4","8","12").contains(sandwichSize));
 
+                //Bread toasting option
                 boolean isToasted = false;
                 String toastInput;
                 do {
@@ -117,6 +126,7 @@ public class OrderService {
                 if (toastInput.equals("yes")) isToasted = true;
                 sandwich = new Sandwich(sandwichSize, breadType, isToasted);
 
+                //Optional topping customization
                 Screen.promptCustomizeToppings();
                 if (scanner.nextLine().trim().equalsIgnoreCase("yes")) {
                     customizeToppings(sandwich, scanner);
@@ -182,10 +192,12 @@ public class OrderService {
     }
 
     public static void userCheckout(Order order, Scanner scanner) {
+        //Prints the order summary and gives price
         System.out.println(order.getSummary());
         Screen.printCheckoutMenu();
 
         String userInput = scanner.nextLine().toLowerCase().trim();
+        //Save file, if user confirms order
         if (userInput.equalsIgnoreCase("1")) {
             ReceiptFile.saveReceiptToFile( order);
             System.out.println("Order saved. Returning to home");
@@ -195,7 +207,9 @@ public class OrderService {
     }
 
     public static void customizeToppings(Sandwich sandwich, Scanner scanner) {
-       Screen.printAvailableToppings();
+        //Shows all categories and pricing for the toppings
+
+        Screen.printAvailableToppings();
 
         while (true) {
             Screen.printToppingCustomizationMenu();
@@ -203,12 +217,14 @@ public class OrderService {
 
             switch (choice) {
                 case "1":
+                    //Add a regular topping, price is 0.0
                     System.out.print("Enter topping name: ");
                     String toppingName = scanner.nextLine().trim();
                     sandwich.addTopping(new RegularTopping(toppingName));
                     break;
 
                 case "2":
+                    //Add a premium topping price is unique for meat and cheese
                     System.out.print("Enter premium topping name (e.g., steak, cheddar): ");
                     String premiumName = scanner.nextLine().toLowerCase().trim();
 
@@ -225,30 +241,35 @@ public class OrderService {
                         break;
                     }
 
+                    //Ask if they want more toppings
                     System.out.print("Add extra? [YES or NO]: ");
                     boolean extra = scanner.nextLine().trim().equalsIgnoreCase("yes");
                     sandwich.addTopping(new PremiumTopping(premiumName, category, extra));
                     break;
 
                 case "3":
+                    //Add any sauce
                     System.out.print("Enter sauce name (e.g., mustard, ranch): ");
                     String sauce = scanner.nextLine().trim();
                     sandwich.addTopping(new RegularTopping(sauce));
                     break;
 
                 case "4":
-                    System.out.print("Enter side name (e.g., au jus, sauce): ");
+                    //Add any sides
+                    System.out.print("Enter side name (e.g., au jus, sauce, fries): ");
                     String side = scanner.nextLine().trim();
                     sandwich.addTopping(new RegularTopping(side));
                     break;
 
                 case "5":
+                    //Remove any topping by name
                     System.out.print("Enter topping name to remove: ");
                     String toRemove = scanner.nextLine().trim();
                     sandwich.removeTopping(toRemove);
                     break;
 
                 case "0":
+                    //Done customizing
                     return;
 
                 default:
