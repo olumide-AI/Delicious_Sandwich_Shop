@@ -195,38 +195,10 @@ public class OrderService {
     }
 
     public static void customizeToppings(Sandwich sandwich, Scanner scanner) {
-        System.out.println("\n--- Available Toppings ---");
-
-        System.out.println("\nRegular Toppings (Included):");
-        System.out.println("- lettuce, peppers, onions, tomatoes, jalapeños, cucumbers, pickles, guacamole, mushrooms");
-
-        System.out.println("\nSauces (Included):");
-        System.out.println("- mayo, mustard, ketchup, ranch, thousand islands, vinaigrette");
-
-        System.out.println("\nSides (Included):");
-        System.out.println("- au jus, sauce");
-
-        System.out.println("\nPremium Meats:");
-        System.out.println("- steak, ham, salami, roast beef, chicken, bacon");
-        System.out.println("  • Prices: 4\" = $1.00, 8\" = $2.00, 12\" = $3.00");
-        System.out.println("  • Extra: +$0.50, $1.00, $1.50");
-
-        System.out.println("\nPremium Cheeses:");
-        System.out.println("- american, provolone, cheddar, swiss");
-        System.out.println("  • Prices: 4\" = $0.75, 8\" = $1.50, 12\" = $2.25");
-        System.out.println("  • Extra: +$0.30, $0.60, $0.90");
+       Screen.printAvailableToppings();
 
         while (true) {
-            System.out.println("+-------------------------------------------------+");
-            System.out.println("| Topping Customization                           |");
-            System.out.println("+-------------------------------------------------+");
-            System.out.println("| Select [1] to Add Regular Topping               |");
-            System.out.println("| Select [2] to Add Premium Topping (Meat/Cheese) |");
-            System.out.println("| Select [3] to Add Sauce                         |");
-            System.out.println("| Select [4] to Add Side                          |");
-            System.out.println("| Select [5] to Remove Topping                    |");
-            System.out.println("| Select [0] when Done Customizing                |");
-            System.out.println("+-------------------------------------------------+");
+            Screen.printToppingCustomizationMenu();
             String choice = scanner.nextLine().trim();
 
             switch (choice) {

@@ -97,5 +97,28 @@ public class Screen {
         System.out.print("Select chip by number: ");
     }
 
+    public static void printAvailableToppings(){
+        System.out.println("\n--- Available Toppings ---");
+
+        System.out.println("\nRegular Toppings (Included):");
+        System.out.println("- lettuce, peppers, onions, tomatoes, jalapeños, cucumbers, pickles, guacamole, mushrooms");
+
+        System.out.println("\nSauces (Included):");
+        System.out.println("- mayo, mustard, ketchup, ranch, thousand islands, vinaigrette");
+
+        System.out.println("\nSides (Included):");
+        System.out.println("- au jus, sauce");
+
+        System.out.println("\nPremium Meats:");
+        System.out.println("- steak, ham, salami, roast beef, chicken, bacon");
+        System.out.println("  • Prices: 4\" = $1.00, 8\" = $2.00, 12\" = $3.00");
+        System.out.println("  • Extra: +$0.50, $1.00, $1.50");
+
+        System.out.println("\nPremium Cheeses:");
+        System.out.println("- american, provolone, cheddar, swiss");
+        System.out.println("  • Prices: 4\" = $0.75, 8\" = $1.50, 12\" = $2.25");
+        System.out.println("  • Extra: +$0.30, $0.60, $0.90");
+    }
+
 
 }
