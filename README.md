@@ -61,13 +61,13 @@ This capstone project simulates a real-world point-of-sale system for a sandwich
 
 ## Features
 
-- Add Sandwich, Chips, and Drinks
-- Customize toppings (meats, cheeses, sauces, veggies)
-- Signature Sandwich templates
-- Realistic pricing by size and topping
-- Receipt file saved per order
-- Clean CLI interaction
-- Organized by OOP best practices
+- Add Sandwiches, Chips & Drinks – Build orders item by item
+- Customizable Toppings – Meats, cheeses, sauces, veggies
+- Signature Sandwich Templates – Quick-start your order
+- Realistic Pricing – Size and topping–based calculations
+- Receipt Generation – View on-screen and save to file
+- Intuitive CLI – Clean prompts and error handling
+- OOP Architecture – Well-organized by best practices
 
 ## Home Screen 
 - Select [1] to place a new order 
@@ -118,43 +118,13 @@ This capstone project simulates a real-world point-of-sale system for a sandwich
 ![CheckoutScreen](images/checkoutscreen.png)
 
 
----
-
-## Technologies Used
-
-- Java 24 (Oracle JDK)
-- Maven for build management
-- JUnit 5 for unit testing
-- Git & GitHub for version control
-- IntelliJ IDEA (Community Edition)
-
----
-
-## Installation
-
-1. Clone the repo:
-   ```
-   git clone https://github.com/your-username/delicious-sandwich-shop.git
-   
-2. Open in IntelliJ as a Maven project
-
-3. Compile and run
-
-4. Follow the on-screen prompts to build your order!
-
-## Folder Structure
-
-[Screenshot of my folder structure](#)
 
 
  ## OOP Concepts
-Abstraction: MenuItem and Topping are abstract superclasses
-
-Inheritance: SignatureSandwich, PremiumTopping extend base classes
-
-Polymorphism: Receipt uses shared interfaces for all MenuItems
-
-Encapsulation: Order contains item logic and total calculations
+- Abstraction: MenuItem and Topping are abstract superclasses
+- Inheritance: SignatureSandwich, PremiumTopping extend base classes
+- Polymorphism: Receipt uses shared interfaces for all MenuItems
+- Encapsulation: Order contains item logic and total calculations
 
  ## Signature Sandwiches
 Predefined sandwiches available:
@@ -174,6 +144,8 @@ JUnit tests exist for:
 - ChipTest
 - OrderTest
 - ToppingTest
+
+Run test with: mvn test
 
 ## Interesting code highlight 
 
@@ -265,6 +237,30 @@ This method only calculates price based on its inputs; it doesn’t touch UI, or
 
 - **Readability & Maintainability:**
 Well-commented, flat structure (no deep nesting) makes it easy to extend with new sizes or categories.on**, **error handling**, and **business-rule implementation** in under ~30 lines of code.
+
+---
+
+## Technologies Used
+
+- Java 24 (Oracle JDK)
+- Maven for build management
+- JUnit 5 for unit testing
+- Git & GitHub for version control
+- IntelliJ IDEA (Community Edition)
+
+---
+
+## Installation
+
+# Clone the repository
+
+git clone https://github.com/your-username/delicious-sandwich-shop.git
+cd delicious-sandwich-shop
+
+# Build and run
+
+mvn clean package
+java -jar target/delicious-sandwich-shop.jar
 
 
 ## Author: 
