@@ -9,6 +9,8 @@ import com.delicioussandwich.model.topping.PremiumTopping;
 import com.delicioussandwich.model.topping.RegularTopping;
 import com.delicioussandwich.repository.ReceiptFile;
 import com.delicioussandwich.ui.Screen;
+
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -214,10 +216,22 @@ public class OrderService {
                     break;
 
                 case "2":
-                    System.out.print("Enter topping name: ");
-                    String premiumName = scanner.nextLine().trim();
-                    System.out.print("Meat or Cheese? ");
-                    String category = scanner.nextLine().trim();
+                    System.out.print("Enter premium topping name (e.g., steak, cheddar): ");
+                    String premiumName = scanner.nextLine().toLowerCase().trim();
+
+                    // detect category
+                    String category;
+                    if (Arrays.asList("steak","ham","salami","roast beef","chicken","bacon")
+                            .contains(premiumName)) {
+                        category = "Meat";
+                    } else if (Arrays.asList("american","provolone","cheddar","swiss")
+                            .contains(premiumName)) {
+                        category = "Cheese";
+                    } else {
+                        System.out.println("Sorry, we don't offer that premium topping.");
+                        break;
+                    }
+
                     System.out.print("Add extra? [YES or NO]: ");
                     boolean extra = scanner.nextLine().trim().equalsIgnoreCase("yes");
                     sandwich.addTopping(new PremiumTopping(premiumName, category, extra));

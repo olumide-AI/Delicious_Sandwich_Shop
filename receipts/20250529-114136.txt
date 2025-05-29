@@ -1,0 +1,12 @@
+DELI-cious Sandwich Shop
+303 2nd st, San Francisco, CA
+Date: 05/29/2025 11:41 AM
+
+--- Order Summary ---
+1. Sandwich: 12" white sandwich [toasted]
+Toppings:
+ - Extra Premium steak
+ - cheddar
+ Sandwich Price: $15.25
+Total Price: $15.25
+Thank you, come again.
