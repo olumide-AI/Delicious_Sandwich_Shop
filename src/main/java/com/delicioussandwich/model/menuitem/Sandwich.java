@@ -13,17 +13,13 @@ import java.util.List;
  */
 public class Sandwich extends MenuItem {
     //Needed Fields
-    private String sandwichSize;
-    private String breadType;
-    private boolean toastedBread;
-    private List<Topping> toppingList;
+    private final String sandwichSize;
+    private final List<Topping> toppingList;
 
     //Constructor
     public Sandwich(String sandwichSize, String breadType, boolean toastedBread) {
         super(buildName(sandwichSize,breadType,toastedBread), 0.0);
         this.sandwichSize = sandwichSize;
-        this.breadType = breadType;
-        this.toastedBread = toastedBread;
         this.toppingList = new ArrayList<>();
     }
     //Helper function for the constructor
@@ -36,36 +32,8 @@ public class Sandwich extends MenuItem {
     }
 
     //Getters and Setters
-    public String getSandwichSize() {
-        return sandwichSize;
-    }
-
-    public void setSandwichSize(String sandwichSize) {
-        this.sandwichSize = sandwichSize;
-    }
-
-    public String getBreadType() {
-        return breadType;
-    }
-
-    public void setBreadType(String breadType) {
-        this.breadType = breadType;
-    }
-
-    public boolean isToastedBread() {
-        return toastedBread;
-    }
-
-    public void setToastedBread(boolean toastedBread) {
-        this.toastedBread = toastedBread;
-    }
-
     public List<Topping> getToppingList() {
         return toppingList;
-    }
-
-    public void setToppingList(List<Topping> toppingList) {
-        this.toppingList = toppingList;
     }
 
     /**
@@ -82,11 +50,12 @@ public class Sandwich extends MenuItem {
     public void removeTopping(String toppingName){
         for(int i =0; i < toppingList.size(); i++){
             Topping topping = toppingList.get(i);
-            if (topping.getName().equalsIgnoreCase(toppingName)){
+            if (topping.getName().equalsIgnoreCase(toppingName.trim())){
                 toppingList.remove(i);
-                break;
+                return;
             }
         }
+        System.out.println("No Topping was found");
     }
 
     @Override
