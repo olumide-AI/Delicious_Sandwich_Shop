@@ -25,6 +25,7 @@ public class Screen {
         System.out.println("| Select [2] to Add a drink              |");
         System.out.println("| Select [3] to Add a chip               |");
         System.out.println("| Select [4] to checkout sandwich        |");
+        System.out.println("| Select [5] to remove an item           |");
         System.out.println("| Select [0] to cancel order             |");
         System.out.println("+----------------------------------------+");
     }

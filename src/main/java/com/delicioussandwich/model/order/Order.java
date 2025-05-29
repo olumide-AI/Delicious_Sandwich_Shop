@@ -35,21 +35,19 @@ public class Order {
         return items;
     }
 
-    public void setItems(List<MenuItem> items) {
-        this.items = items;
-    }
 
     /**
      * This lets us take out the first match we find in our list
      * @param itemName the item you want to remove from order
      */
-    public void removeItemByName(String itemName){
+    public boolean removeItemByName(String itemName){
         for(int i=0; i< items.size(); i++){
             if (items.get(i).getName().equalsIgnoreCase(itemName)){
                 items.remove(i);
-                break;
+                return true;
             }
         }
+        return false;
     }
 
     public double calcTotal(){
@@ -66,14 +64,20 @@ public class Order {
      */
     public String getSummary(){
         StringBuilder summary = new StringBuilder("--- Order Summary ---\n");
+
+        //If we know the customer display their name
         if(customer != null){
             summary.append("Customer: ").append(customer.toString()).append("\n");
         }
+
+        //List each item with a number
         int count = 1;
         for (MenuItem item: items){
             summary.append(count).append(". ").append(item.toString()).append("\n");
             count++;
         }
+
+        //Append the total cost
         summary.append("Total Price: $").append(String.format("%.2f", calcTotal()));
         return summary.toString();
     }

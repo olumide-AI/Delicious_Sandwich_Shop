@@ -58,13 +58,26 @@ public class OrderService {
                     userCheckout(order, scanner);
                     isOrdering = false;
                     break;
+                case "5":
+                    // 5) Remove an item by name
+                    System.out.print("Enter the name of the item to remove: ");
+                    String toRemove = scanner.nextLine().trim();
+
+                    // attempt removal and give feedback
+                    boolean removed = order.removeItemByName(toRemove);
+                    if (removed) {
+                        System.out.println("'" + toRemove + "' was removed from your order.");
+                    } else {
+                        System.out.println("No item named '" + toRemove + "' found in your order.");
+                    }
+                    break;
                 case "0":
                     //cancel order
                     System.out.println("Order canceled. ");
                     isOrdering = false;
                     break;
                 default:
-                    System.out.println("Invalid options, please select 0,1,2,3, 0r 4.");
+                    System.out.println("Invalid options, please select 0,1,2,3, or 4.");
 
 
             }
