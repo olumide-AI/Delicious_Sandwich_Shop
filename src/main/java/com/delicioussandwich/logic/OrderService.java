@@ -139,20 +139,40 @@ public class OrderService {
     }
 
     public static Drink buildUserDrink(Scanner scanner) {
-        System.out.println("Enter drink of choice: ");
-        String userInput = scanner.nextLine().toLowerCase().trim();
-        String drinkCupSize;
+        List<String> drinks = List.of("cola", "lemonade", "iced tea", "coffee", "water");
+        String drinkChoice;
 
+        // 1) pick a drink from the list
         while (true) {
-            System.out.println("Choose cup size [Small, ,Medium or Large]: ");
-            drinkCupSize = scanner.nextLine().toLowerCase().trim();
-            if ((drinkCupSize.equalsIgnoreCase("small")) || drinkCupSize.equalsIgnoreCase("medium") || drinkCupSize.equalsIgnoreCase("large")) {
-                break;
-            } else {
-                System.out.println("Please select an appropriate cup size");
+            System.out.println("\n--- Available Drinks ---");
+            for (int i = 0; i < drinks.size(); i++) {
+                System.out.printf("%d) %s%n", i + 1, drinks.get(i));
             }
+            System.out.print("Select drink by number: ");
+            String input = scanner.nextLine().trim();
+
+            try {
+                int idx = Integer.parseInt(input);
+                if (idx >= 1 && idx <= drinks.size()) {
+                    drinkChoice = drinks.get(idx - 1);
+                    break;
+                }
+            } catch (NumberFormatException ignored) { }
+            System.out.println("Invalid selection. Please enter a number between 1 and " + drinks.size());
         }
-        return new Drink(userInput, drinkCupSize);
+
+        // 2) pick a cup size
+        String drinkCupSize;
+        while (true) {
+            System.out.print("Choose cup size [Small, Medium, Large]: ");
+            drinkCupSize = scanner.nextLine().toLowerCase().trim();
+            if (List.of("small", "medium", "large").contains(drinkCupSize)) {
+                break;
+            }
+            System.out.println("Please select Small, Medium, or Large.");
+        }
+
+        return new Drink(drinkChoice, drinkCupSize);
     }
 
     public static Chip buildUserChip(Scanner scanner) {
