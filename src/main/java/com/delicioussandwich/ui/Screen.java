@@ -25,4 +25,20 @@ public class Screen {
         System.out.println("| Select [0] to cancel order             |");
         System.out.println("+----------------------------------------+");
     }
+
+
+    public static void buildSandwichMenu() {
+        System.out.println("+------------------------------------------------+");
+        System.out.println("| Let's Build your Sandwich.                     |");
+        System.out.println("+------------------------------------------------+");
+        System.out.println("| Select [1] to build your own                   |");
+        System.out.println("| Select [2] for Signature BLT                   |");
+        System.out.println("| Select [3] for Signature Philly Cheese Steak   |");
+        System.out.println("| Select [4] for Signature Turkey Club           |");
+        System.out.println("| Select [5] for Signature Buffalo Chicken       |");
+        System.out.println("| Select [6] for Signature Maaike Special        |");
+        System.out.println("+------------------------------------------------+");
+    }
+
+
 }
