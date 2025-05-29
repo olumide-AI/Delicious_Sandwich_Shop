@@ -6,6 +6,7 @@ import java.util.List;
  * Util class for rendering application menus to the console
  */
 public class Screen {
+    //Prints console home screen information
     public static void homeScreen(){
         System.out.println("+----------------------------------------+");
         System.out.println("| Welcome to our Delicious Sandwich Shop |");
@@ -15,7 +16,7 @@ public class Screen {
         System.out.println("+----------------------------------------+");
     }
 
-
+    //Prints console order screen information
     public static void orderScreen(){
         System.out.println("+----------------------------------------+");
         System.out.println("| Welcome to our order screen            |");
@@ -28,7 +29,7 @@ public class Screen {
         System.out.println("+----------------------------------------+");
     }
 
-
+    //Prints sandwich information console
     public static void buildSandwichMenu() {
         System.out.println("+------------------------------------------------+");
         System.out.println("| Let's Build your Sandwich.                     |");
@@ -42,6 +43,7 @@ public class Screen {
         System.out.println("+------------------------------------------------+");
     }
 
+    //prints confirm and save feature to console
     public static void printCheckoutMenu() {
         System.out.println("+----------------------------------------------------+");
         System.out.println("| Select [1] to Confirm Order                        |");
@@ -49,6 +51,7 @@ public class Screen {
         System.out.println("+----------------------------------------------------+");
     }
 
+    //Prints information to let user customize toppings
     public static void printToppingCustomizationMenu() {
         System.out.println("+-------------------------------------------------+");
         System.out.println("| Topping Customization                           |");
@@ -61,22 +64,27 @@ public class Screen {
         System.out.println("| [0] Done Customizing                            |");
         System.out.println("+-------------------------------------------------+");
     }
+    //Prompt for bread type
     public static void promptBreadType() {
         System.out.print("Choose your bread [White, Wheat, Wrap, Rye]: ");
     }
 
+    //Prompt for sandwich size
     public static void promptSandwichSize() {
         System.out.print("Enter a Sandwich Size [4, 8, or 12 inches]: ");
     }
 
+    //Prompt for bread toasting
     public static void promptToasting() {
         System.out.print("Do you want it toasted? [YES or NO]: ");
     }
 
+    //Prompt to add more toppings
     public static void promptCustomizeToppings() {
         System.out.print("Would you like to customize toppings? [YES or NO]: ");
     }
 
+    //Prompt for the drink menu
     public static void printDrinkMenu(List<String> drinks) {
         System.out.println("\n--- Available Drinks ---");
         for (int i = 0; i < drinks.size(); i++) {
@@ -85,10 +93,12 @@ public class Screen {
         System.out.print("Select drink by number: ");
     }
 
+    //Prompt for the cup size
     public static void promptCupSize() {
         System.out.print("Choose cup size [Small, Medium, Large]: ");
     }
 
+    //Prompt for the chips menu
     public static void printChipMenu(List<String> chips) {
         System.out.println("\n--- Available Chips ---");
         for (int i = 0; i < chips.size(); i++) {
@@ -97,6 +107,7 @@ public class Screen {
         System.out.print("Select chip by number: ");
     }
 
+    //Prompt for all thr toppings we have availanle
     public static void printAvailableToppings(){
         System.out.println("\n--- Available Toppings ---");
 
@@ -107,7 +118,7 @@ public class Screen {
         System.out.println("- mayo, mustard, ketchup, ranch, thousand islands, vinaigrette");
 
         System.out.println("\nSides (Included):");
-        System.out.println("- au jus, sauce");
+        System.out.println("- au jus, sauce, fries, potatoes salad");
 
         System.out.println("\nPremium Meats:");
         System.out.println("- steak, ham, salami, roast beef, chicken, bacon");
