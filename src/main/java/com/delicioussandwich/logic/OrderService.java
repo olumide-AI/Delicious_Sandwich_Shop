@@ -139,7 +139,7 @@ public class OrderService {
     }
 
     public static Drink buildUserDrink(Scanner scanner) {
-        List<String> drinks = List.of("cola", "lemonade", "iced tea", "coffee", "water");
+        List<String> drinks = List.of("Cola", "Lemonade", "Iced Tea", "Coffee", "Water");
         String drinkChoice;
 
         // 1) pick a drink from the list
@@ -157,7 +157,7 @@ public class OrderService {
                     drinkChoice = drinks.get(idx - 1);
                     break;
                 }
-            } catch (NumberFormatException ignored) { }
+            } catch (NumberFormatException _) { }
             System.out.println("Invalid selection. Please enter a number between 1 and " + drinks.size());
         }
 
@@ -174,11 +174,29 @@ public class OrderService {
 
         return new Drink(drinkChoice, drinkCupSize);
     }
-
     public static Chip buildUserChip(Scanner scanner) {
-        System.out.println("Enter the chip type and flavour you want. FYI we only have one size and they're all the same price");
-        String userInput = scanner.nextLine().toLowerCase().trim();
-        return new Chip(userInput);
+        List<String> chips = List.of("bbq", "salted", "cheddar", "sour cream", "jalapeño");
+        String chipChoice;
+
+        while (true) {
+            System.out.println("\n--- Available Chips ---");
+            for (int i = 0; i < chips.size(); i++) {
+                System.out.printf("%d) %s%n", i + 1, chips.get(i));
+            }
+            System.out.print("Select chip by number: ");
+            String input = scanner.nextLine().trim();
+
+            try {
+                int idx = Integer.parseInt(input);
+                if (idx >= 1 && idx <= chips.size()) {
+                    chipChoice = chips.get(idx - 1);
+                    break;
+                }
+            } catch (NumberFormatException _) { }
+            System.out.println("Invalid selection. Please enter a number between 1 and " + chips.size());
+        }
+
+        return new Chip(chipChoice);
     }
 
     public static void userCheckout(Order order, Scanner scanner) {
