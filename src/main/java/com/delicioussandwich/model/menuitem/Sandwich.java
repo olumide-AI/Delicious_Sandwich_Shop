@@ -73,6 +73,9 @@ public class Sandwich extends MenuItem {
      * @param topping add this to the topping list
      */
     public void addTopping(Topping topping){
+        if(topping == null){
+            throw new IllegalArgumentException("Cannot add a null topping");
+        }
         toppingList.add(topping);
     }
 
@@ -89,6 +92,7 @@ public class Sandwich extends MenuItem {
     @Override
     public double getPrice(){
         double regularBreadPrice = 0.0;
+        //Determine base price by size
         if (sandwichSize.equalsIgnoreCase("4")){
             regularBreadPrice = 5.50;
         } else if (sandwichSize.equalsIgnoreCase("8")) {

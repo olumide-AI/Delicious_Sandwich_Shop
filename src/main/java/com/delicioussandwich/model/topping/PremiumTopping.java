@@ -51,7 +51,7 @@ public class PremiumTopping extends Topping {
                 else {
                     return 2.00;
                 }
-            } else if (sandwichSize.equalsIgnoreCase("12")) {
+            } else {
                 if (extraTopping){
                     return 4.50;
                 }

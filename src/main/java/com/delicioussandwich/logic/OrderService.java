@@ -59,7 +59,7 @@ public class OrderService {
                     isOrdering = false;
                     break;
                 case "5":
-                    // 5) Remove an item by name
+                    // Remove an item by name
                     System.out.print("Enter the name of the item to remove: ");
                     String toRemove = scanner.nextLine().trim();
 
