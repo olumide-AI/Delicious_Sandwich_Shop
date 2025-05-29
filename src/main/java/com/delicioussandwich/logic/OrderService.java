@@ -11,6 +11,7 @@ import com.delicioussandwich.repository.ReceiptFile;
 import com.delicioussandwich.ui.Screen;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -77,8 +78,14 @@ public class OrderService {
 
         String userSandwichChoice = scanner.nextLine().trim();
 
-        System.out.println("Choose your bread (White, Wheat, Wrap and Rye: ");
-        String breadType = scanner.nextLine().toLowerCase().trim();
+        List<String> validBreads = List.of("white","wheat","wrap","rye");
+        String breadType;
+        while (true) {
+            System.out.print("Choose your bread [White, Wheat, Wrap, Rye]: ");
+            breadType = scanner.nextLine().toLowerCase().trim();
+            if (validBreads.contains(breadType)) break;
+            System.out.println("Please choose one of: " + validBreads);
+        }
 
         Sandwich sandwich;
         switch (userSandwichChoice) {
