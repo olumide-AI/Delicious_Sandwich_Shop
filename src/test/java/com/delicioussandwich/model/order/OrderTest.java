@@ -1,10 +1,8 @@
-package com.delicioussandwich.model;
+package com.delicioussandwich.model.order;
 
 import com.delicioussandwich.model.menuitem.Chip;
 import com.delicioussandwich.model.menuitem.Drink;
 import com.delicioussandwich.model.menuitem.Sandwich;
-import com.delicioussandwich.model.order.Customer;
-import com.delicioussandwich.model.order.Order;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

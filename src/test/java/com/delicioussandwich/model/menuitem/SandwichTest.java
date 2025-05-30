@@ -1,5 +1,4 @@
-package com.delicioussandwich.model;
-import com.delicioussandwich.model.menuitem.Sandwich;
+package com.delicioussandwich.model.menuitem;
 import com.delicioussandwich.model.topping.PremiumTopping;
 import com.delicioussandwich.model.topping.RegularTopping;
 import org.junit.jupiter.api.Test;

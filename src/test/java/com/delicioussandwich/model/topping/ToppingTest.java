@@ -1,7 +1,5 @@
-package com.delicioussandwich.model;
+package com.delicioussandwich.model.topping;
 import com.delicioussandwich.model.abstractclass.Topping;
-import com.delicioussandwich.model.topping.PremiumTopping;
-import com.delicioussandwich.model.topping.RegularTopping;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

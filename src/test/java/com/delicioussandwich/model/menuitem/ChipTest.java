@@ -1,6 +1,5 @@
-package com.delicioussandwich.model;
+package com.delicioussandwich.model.menuitem;
 
-import com.delicioussandwich.model.menuitem.Chip;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
