@@ -8,7 +8,7 @@ import java.util.List;
 public class Screen {
     //Prints console home screen information
     public static void homeScreen(){
-        System.out.println("+----------------------------------------+");
+        System.out.println(AnsiColor.ANSI_CYAN + "+----------------------------------------+" + AnsiColor.ANSI_RESET);
         System.out.println("| Welcome to our Delicious Sandwich Shop |");
         System.out.println("+----------------------------------------+");
         System.out.println("| Select [1] for New Order               |");
