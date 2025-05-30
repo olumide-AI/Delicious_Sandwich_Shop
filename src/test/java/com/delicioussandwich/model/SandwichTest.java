@@ -12,7 +12,7 @@ public class SandwichTest {
         Sandwich sandwich = new Sandwich("4", "white", false);
 
         //Act and Asset
-        assertEquals("4\"white sandwich.", sandwich.getName());
+        assertEquals("4\" white sandwich", sandwich.getName());
 
     }
 

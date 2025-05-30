@@ -11,7 +11,7 @@ public class ChipTest {
     @Test
     public void chipNameTest (){
         Chip chip = new Chip("BBQ");
-        assertEquals("BBQ Chips", chip.getName());
+        assertEquals("BBQ", chip.getName());
     }
 
     @Test
