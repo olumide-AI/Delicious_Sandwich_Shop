@@ -24,9 +24,3 @@ jobs:
     - name: Run Maven tests
       run: mvn --batch-mode test
 
-    - name: Archive test reports
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: test-report
-        path: target/surefire-reports/
