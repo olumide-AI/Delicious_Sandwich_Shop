@@ -9,25 +9,25 @@ public class Screen {
     //Prints console home screen information
     public static void homeScreen(){
         System.out.println(AnsiColor.ANSI_CYAN + "+----------------------------------------+" + AnsiColor.ANSI_RESET);
-        System.out.println("| Welcome to our Delicious Sandwich Shop |");
-        System.out.println("+----------------------------------------+");
-        System.out.println("| Select [1] for New Order               |");
-        System.out.println("| Select [0] to Exit Application         |");
-        System.out.println("+----------------------------------------+");
+        System.out.println(AnsiColor.ANSI_CYAN + "| Welcome to our Delicious Sandwich Shop |" + AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_CYAN + "+----------------------------------------+" + AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+ "| Select [1] for New Order               |" + AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_RED +  "| Select [0] to Exit Application         |" + AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_CYAN + "+----------------------------------------+" + AnsiColor.ANSI_RESET);
     }
 
     //Prints console order screen information
     public static void orderScreen(){
-        System.out.println("+----------------------------------------+");
-        System.out.println("| Welcome to our order screen            |");
-        System.out.println("+----------------------------------------+");
-        System.out.println("| Select [1] to Add a sandwich           |");
-        System.out.println("| Select [2] to Add a drink              |");
-        System.out.println("| Select [3] to Add a chip               |");
-        System.out.println("| Select [4] to checkout sandwich        |");
-        System.out.println("| Select [5] to remove an item           |");
-        System.out.println("| Select [0] to cancel order             |");
-        System.out.println("+----------------------------------------+");
+        System.out.println(AnsiColor.ANSI_CYAN + "+----------------------------------------+" + AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_CYAN + "| Welcome to our order screen            |" + AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_CYAN + "+----------------------------------------+" + AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+ "| Select [1] to Add a sandwich           |" + AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+ "| Select [2] to Add a drink              |" + AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+ "| Select [3] to Add a chip               |" + AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+ "| Select [4] to checkout sandwich        |" + AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+ "| Select [5] to remove an item           |" + AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+ "| Select [0] to cancel order             |" + AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_CYAN + "+----------------------------------------+" + AnsiColor.ANSI_RESET);
     }
 
     //Prints sandwich information console

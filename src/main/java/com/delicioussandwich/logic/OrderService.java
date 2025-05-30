@@ -10,6 +10,7 @@ import com.delicioussandwich.model.signaturesandwiches.*;
 import com.delicioussandwich.model.topping.PremiumTopping;
 import com.delicioussandwich.model.topping.RegularTopping;
 import com.delicioussandwich.repository.ReceiptFile;
+import com.delicioussandwich.ui.AnsiColor;
 import com.delicioussandwich.ui.Screen;
 
 import java.util.Arrays;
@@ -28,9 +29,9 @@ public class OrderService {
      */
     public static void newOrder(Scanner scanner) {
         // --- Gather customer info before starting the order ---
-        System.out.print("Enter your name: ");
+        System.out.print(AnsiColor.ANSI_PURPLE +  "Enter your name: " + AnsiColor.ANSI_RESET);
         String name = scanner.nextLine().trim();
-        System.out.print("Enter your phone number: ");
+        System.out.print(AnsiColor.ANSI_PURPLE + "Enter your phone number: "  + AnsiColor.ANSI_RESET);
         String phoneNumber = scanner.nextLine().trim();
 
         // Create the customer
