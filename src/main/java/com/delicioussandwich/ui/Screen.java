@@ -32,103 +32,103 @@ public class Screen {
 
     //Prints sandwich information console
     public static void buildSandwichMenu() {
-        System.out.println("+------------------------------------------------+");
-        System.out.println("| Let's Build your Sandwich.                     |");
-        System.out.println("+------------------------------------------------+");
-        System.out.println("| Select [1] to build your own                   |");
-        System.out.println("| Select [2] for Signature BLT                   |");
-        System.out.println("| Select [3] for Signature Philly Cheese Steak   |");
-        System.out.println("| Select [4] for Signature Turkey Club           |");
-        System.out.println("| Select [5] for Signature Buffalo Chicken       |");
-        System.out.println("| Select [6] for Signature Maaike Special        |");
-        System.out.println("+------------------------------------------------+");
+        System.out.println(AnsiColor.ANSI_CYAN + "+------------------------------------------------+"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_CYAN + "| Let's Build your Sandwich.                     |"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_CYAN + "+------------------------------------------------+"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+ "| Select [1] to build your own                   |"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+ "| Select [2] for Signature BLT                   |"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+ "| Select [3] for Signature Philly Cheese Steak   |"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+ "| Select [4] for Signature Turkey Club           |"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+ "| Select [5] for Signature Buffalo Chicken       |"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+ "| Select [6] for Signature Maaike Special        |"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_CYAN + "+------------------------------------------------+"+ AnsiColor.ANSI_RESET);
     }
 
     //prints confirm and save feature to console
     public static void printCheckoutMenu() {
-        System.out.println("+----------------------------------------------------+");
-        System.out.println("| Select [1] to Confirm Order                        |");
-        System.out.println("| Select [2] to Cancel and Return to Home            |");
-        System.out.println("+----------------------------------------------------+");
+        System.out.println(AnsiColor.ANSI_CYAN + "+----------------------------------------------------+"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+ "| Select [1] to Confirm Order                        |"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_RED +  "| Select [2] to Cancel and Return to Home            |"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_CYAN + "+----------------------------------------------------+"+ AnsiColor.ANSI_RESET);
     }
 
     //Prints information to let user customize toppings
     public static void printToppingCustomizationMenu() {
-        System.out.println("+-------------------------------------------------+");
-        System.out.println("| Topping Customization                           |");
-        System.out.println("+-------------------------------------------------+");
-        System.out.println("| [1] Add Regular Topping                         |");
-        System.out.println("| [2] Add Premium Topping (Meat/Cheese)           |");
-        System.out.println("| [3] Add Sauce                                   |");
-        System.out.println("| [4] Add Side                                    |");
-        System.out.println("| [5] Remove Topping                              |");
-        System.out.println("| [0] Done Customizing                            |");
-        System.out.println("+-------------------------------------------------+");
+        System.out.println(AnsiColor.ANSI_CYAN +"+-------------------------------------------------+"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_CYAN +"| Topping Customization                           |"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_CYAN +"+-------------------------------------------------+"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+"| [1] Add Regular Topping                         |"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+"| [2] Add Premium Topping (Meat/Cheese)           |"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+"| [3] Add Sauce                                   |"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+"| [4] Add Side                                    |"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_RED +"| [5] Remove Topping                              |"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_RED +"| [0] Done Customizing                            |"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_CYAN +"+-------------------------------------------------+"+ AnsiColor.ANSI_RESET);
     }
     //Prompt for bread type
     public static void promptBreadType() {
-        System.out.print("Choose your bread [White, Wheat, Wrap, Rye]: ");
+        System.out.print(AnsiColor.ANSI_PURPLE + "Choose your bread [White, Wheat, Wrap, Rye]: "+ AnsiColor.ANSI_RESET);
     }
 
     //Prompt for sandwich size
     public static void promptSandwichSize() {
-        System.out.print("Enter a Sandwich Size [4, 8, or 12 inches]: ");
+        System.out.print(AnsiColor.ANSI_PURPLE +"Enter a Sandwich Size [4, 8, or 12 inches]: "+ AnsiColor.ANSI_RESET);
     }
 
     //Prompt for bread toasting
     public static void promptToasting() {
-        System.out.print("Do you want it toasted? [YES or NO]: ");
+        System.out.print(AnsiColor.ANSI_PURPLE +"Do you want it toasted? [YES or NO]: "+ AnsiColor.ANSI_RESET);
     }
 
     //Prompt to add more toppings
     public static void promptCustomizeToppings() {
-        System.out.print("Would you like to customize toppings? [YES or NO]: ");
+        System.out.print(AnsiColor.ANSI_PURPLE +"Would you like to customize toppings? [YES or NO]: "+ AnsiColor.ANSI_RESET);
     }
 
     //Prompt for the drink menu
     public static void printDrinkMenu(List<String> drinks) {
-        System.out.println("\n--- Available Drinks ---");
+        System.out.println(AnsiColor.ANSI_CYAN +"\n--- Available Drinks ---"+ AnsiColor.ANSI_RESET);
         for (int i = 0; i < drinks.size(); i++) {
-            System.out.printf("%d) %s%n", i + 1, drinks.get(i));
+            System.out.printf(AnsiColor.ANSI_GREEN+"%d) %s%n", i + 1, drinks.get(i)+ AnsiColor.ANSI_RESET);
         }
-        System.out.print("Select drink by number: ");
+        System.out.print(AnsiColor.ANSI_PURPLE +"Select drink by number: "+ AnsiColor.ANSI_RESET);
     }
 
     //Prompt for the cup size
     public static void promptCupSize() {
-        System.out.print("Choose cup size [Small, Medium, Large]: ");
+        System.out.print(AnsiColor.ANSI_PURPLE +"Choose cup size [Small, Medium, Large]: "+ AnsiColor.ANSI_RESET);
     }
 
     //Prompt for the chips menu
     public static void printChipMenu(List<String> chips) {
-        System.out.println("\n--- Available Chips ---");
+        System.out.println(AnsiColor.ANSI_CYAN +"\n--- Available Chips ---"+ AnsiColor.ANSI_RESET);
         for (int i = 0; i < chips.size(); i++) {
-            System.out.printf("%d) %s%n", i + 1, chips.get(i));
+            System.out.printf(AnsiColor.ANSI_GREEN+"%d) %s%n", i + 1, chips.get(i)+ AnsiColor.ANSI_RESET);
         }
-        System.out.print("Select chip by number: ");
+        System.out.print(AnsiColor.ANSI_PURPLE +"Select chip by number: "+ AnsiColor.ANSI_RESET);
     }
 
     //Prompt for all thr toppings we have availanle
     public static void printAvailableToppings(){
-        System.out.println("\n--- Available Toppings ---");
+        System.out.println(AnsiColor.ANSI_CYAN+"\n--- Available Toppings ---"+ AnsiColor.ANSI_RESET);
 
-        System.out.println("\nRegular Toppings (Included):");
-        System.out.println("- lettuce, peppers, onions, tomatoes, jalapeños, cucumbers, pickles, guacamole, mushrooms");
+        System.out.println(AnsiColor.ANSI_GREEN+"\nRegular Toppings (Included):"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+"- lettuce, peppers, onions, tomatoes, jalapeños, cucumbers, pickles, guacamole, mushrooms"+ AnsiColor.ANSI_RESET);
 
-        System.out.println("\nSauces (Included):");
-        System.out.println("- mayo, mustard, ketchup, ranch, thousand islands, vinaigrette");
+        System.out.println(AnsiColor.ANSI_GREEN+"\nSauces (Included):"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+"- mayo, mustard, ketchup, ranch, thousand islands, vinaigrette"+ AnsiColor.ANSI_RESET);
 
-        System.out.println("\nSides (Included):");
-        System.out.println("- au jus, sauce, fries, potatoes salad");
+        System.out.println(AnsiColor.ANSI_GREEN+"\nSides (Included):"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+"- au jus, sauce, fries, potatoes salad"+ AnsiColor.ANSI_RESET);
 
-        System.out.println("\nPremium Meats:");
-        System.out.println("- steak, ham, salami, roast beef, chicken, bacon");
-        System.out.println("  • Prices: 4\" = $1.00, 8\" = $2.00, 12\" = $3.00");
-        System.out.println("  • Extra: +$0.50, $1.00, $1.50");
+        System.out.println(AnsiColor.ANSI_GREEN+"\nPremium Meats:"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+"- steak, ham, salami, roast beef, chicken, bacon"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+"  • Prices: 4\" = $1.00, 8\" = $2.00, 12\" = $3.00"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+"  • Extra: +$0.50, $1.00, $1.50"+ AnsiColor.ANSI_RESET);
 
-        System.out.println("\nPremium Cheeses:");
-        System.out.println("- american, provolone, cheddar, swiss");
-        System.out.println("  • Prices: 4\" = $0.75, 8\" = $1.50, 12\" = $2.25");
-        System.out.println("  • Extra: +$0.30, $0.60, $0.90");
+        System.out.println(AnsiColor.ANSI_GREEN+"\nPremium Cheeses:"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+"- american, provolone, cheddar, swiss"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+"  • Prices: 4\" = $0.75, 8\" = $1.50, 12\" = $2.25"+ AnsiColor.ANSI_RESET);
+        System.out.println(AnsiColor.ANSI_GREEN+"  • Extra: +$0.30, $0.60, $0.90"+ AnsiColor.ANSI_RESET);
     }
 }
