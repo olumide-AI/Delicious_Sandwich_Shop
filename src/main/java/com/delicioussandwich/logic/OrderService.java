@@ -159,7 +159,7 @@ public class OrderService {
                 }
                 return sandwich;
         }
-        System.out.println("Would you like to customize toppings? [YES or NO]: ");
+        System.out.println(AnsiColor.ANSI_PURPLE +"Would you like to customize toppings? [YES or NO]: " +AnsiColor.ANSI_RESET);
         if (scanner.nextLine().trim().equalsIgnoreCase("yes")) {
             customizeToppings(sandwich, scanner);
         }
@@ -184,7 +184,7 @@ public class OrderService {
                     break;
                 }
             } catch (NumberFormatException _) { }
-            System.out.println("Invalid selection. Please enter a number between 1 and " + drinks.size());
+            System.out.println(AnsiColor.ANSI_RED +"Invalid selection. Please enter a number between 1 and " + drinks.size() +AnsiColor.ANSI_RESET);
         }
         //Validate cup against rules
         String drinkCupSize;
@@ -211,7 +211,7 @@ public class OrderService {
                     break;
                 }
             } catch (NumberFormatException _) { }
-            System.out.println("Invalid selection. Please enter a number between 1 and " + chips.size());
+            System.out.println(AnsiColor.ANSI_RED +"Invalid selection. Please enter a number between 1 and " + chips.size() + AnsiColor.ANSI_RESET);
         }
 
         return new Chip(userChipChoice);
@@ -226,9 +226,9 @@ public class OrderService {
         //Save file, if user confirms order
         if (userInput.equalsIgnoreCase("1")) {
             ReceiptFile.saveReceiptToFile( order);
-            System.out.println("Order saved. Returning to home");
+            System.out.println(AnsiColor.ANSI_GREEN +"Order saved. Returning to home" +AnsiColor.ANSI_RESET);
         } else {
-            System.out.println("Order has been canceled");
+            System.out.println(AnsiColor.ANSI_RED +"Order has been canceled" +AnsiColor.ANSI_RESET);
         }
     }
 
@@ -254,46 +254,46 @@ public class OrderService {
             switch (choice) {
                 case "1":
                     //Add a regular topping, price is 0.0
-                    System.out.print("Enter topping name: ");
+                    System.out.print(AnsiColor.ANSI_PURPLE +"Enter topping name: " +AnsiColor.ANSI_RESET);
                     String toppingName = scanner.nextLine().trim();
                     sandwich.addTopping(new RegularTopping(toppingName));
                     break;
 
                 case "2":
                     //Add a premium topping price is unique for meat and cheese
-                    System.out.print("Enter premium topping name (e.g., steak, cheddar): ");
+                    System.out.print(AnsiColor.ANSI_PURPLE +"Enter premium topping name (e.g., steak, cheddar): " + AnsiColor.ANSI_RESET);
                     String premiumName = scanner.nextLine().toLowerCase().trim();
 
                     // Figures out if meat or cheese is the name
                     String category = getPremiumToppingCategory(premiumName);
                     if (category == null) {
-                        System.out.println("Sorry, we don't offer that premium topping.");
+                        System.out.println(AnsiColor.ANSI_RED +"Sorry, we don't offer that premium topping." + AnsiColor.ANSI_RESET);
                         break;
                     }
 
                     //Ask if they want more toppings
-                    System.out.print("Add extra? [YES or NO]: ");
+                    System.out.print(AnsiColor.ANSI_PURPLE +"Add extra? [YES or NO]: " + AnsiColor.ANSI_RESET);
                     boolean extra = scanner.nextLine().trim().equalsIgnoreCase("yes");
                     sandwich.addTopping(new PremiumTopping(premiumName, category, extra));
                     break;
 
                 case "3":
                     //Add any sauce
-                    System.out.print("Enter sauce name (e.g., mustard, ranch): ");
+                    System.out.print(AnsiColor.ANSI_PURPLE +  "Enter sauce name (e.g., mustard, ranch): " + AnsiColor.ANSI_RESET);
                     String sauce = scanner.nextLine().trim();
                     sandwich.addTopping(new RegularTopping(sauce));
                     break;
 
                 case "4":
                     //Add any sides
-                    System.out.print("Enter side name (e.g., au jus, sauce, fries): ");
+                    System.out.print(AnsiColor.ANSI_PURPLE +"Enter side name (e.g., au jus, sauce, fries): " + AnsiColor.ANSI_RESET);
                     String side = scanner.nextLine().trim();
                     sandwich.addTopping(new RegularTopping(side));
                     break;
 
                 case "5":
                     //Remove any topping by name
-                    System.out.print("Enter topping name to remove: ");
+                    System.out.print(AnsiColor.ANSI_PURPLE +"Enter topping name to remove: " + AnsiColor.ANSI_RESET);
                     String toRemove = scanner.nextLine().trim();
                     sandwich.removeTopping(toRemove);
                     break;
@@ -303,7 +303,7 @@ public class OrderService {
                     return;
 
                 default:
-                    System.out.println(" Invalid input. Please choose again.");
+                    System.out.println(AnsiColor.ANSI_RED+" Invalid input. Please choose again."+ AnsiColor.ANSI_RESET);
             }
         }
     }
