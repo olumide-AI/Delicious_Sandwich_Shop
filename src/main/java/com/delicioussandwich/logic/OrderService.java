@@ -4,6 +4,7 @@ package com.delicioussandwich.logic;
 import com.delicioussandwich.model.menuitem.Chip;
 import com.delicioussandwich.model.menuitem.Drink;
 import com.delicioussandwich.model.menuitem.Sandwich;
+import com.delicioussandwich.model.order.Customer;
 import com.delicioussandwich.model.order.Order;
 import com.delicioussandwich.model.signaturesandwiches.*;
 import com.delicioussandwich.model.topping.PremiumTopping;
@@ -26,8 +27,19 @@ public class OrderService {
      * @param scanner shared Scanner for reading user input
      */
     public static void newOrder(Scanner scanner) {
+        // --- Gather customer info before starting the order ---
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine().trim();
+        System.out.print("Enter your phone number: ");
+        String phoneNumber = scanner.nextLine().trim();
+
+        // Create the customer
+        Customer customer = new Customer(name, phoneNumber);
+
         //Create a new order
         Order order = new Order();
+        order.setCustomer(customer);
+
         boolean isOrdering = true;
 
         while (isOrdering) {
