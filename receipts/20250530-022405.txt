@@ -1,0 +1,25 @@
+DELI-cious Sandwich Shop
+303 2nd st, San Francisco, CA
+Date: 05/30/2025 02:24 AM
+
+--- Order Summary ---
+Customer: olumide kolawole (1221331234)
+1. Sandwich: BLT
+Toppings:
+ - Bacon
+ - Cheddar
+ - Lettuce
+ - Tomato
+ - Ranch
+ Sandwich Price: $9.00
+2. Sandwich: 4" wheat sandwich
+Toppings:
+ - lettuce
+ - chicken
+ - mustard
+ - fries
+ Sandwich Price: $6.50
+3. Drink: large Cola - $3.00
+4. Chips: Sunflower Chips - $1.50
+Total Price: $20.00
+Thank you, come again.

@@ -264,14 +264,8 @@ public class OrderService {
                     String premiumName = scanner.nextLine().toLowerCase().trim();
 
                     // Figures out if meat or cheese is the name
-                    String category;
-                    if (Arrays.asList("steak","ham","salami","roast beef","chicken","bacon")
-                            .contains(premiumName)) {
-                        category = "Meat";
-                    } else if (Arrays.asList("american","provolone","cheddar","swiss")
-                            .contains(premiumName)) {
-                        category = "Cheese";
-                    } else {
+                    String category = getPremiumToppingCategory(premiumName);
+                    if (category == null) {
                         System.out.println("Sorry, we don't offer that premium topping.");
                         break;
                     }

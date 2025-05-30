@@ -15,16 +15,11 @@ public class PremiumTopping extends Topping {
     public PremiumTopping(String name,  String toppingCategory, boolean extraTopping) {
         super(name);
         this.extraTopping = extraTopping;
-        this.toppingCategory = toppingCategory;
+        this.toppingCategory = toppingCategory.trim().toLowerCase();
     }
 
     @Override
     public double getPrice(String sandwichSize) {
-        //Validate whether category is meat or cheese
-        if (!toppingCategory.equalsIgnoreCase("meat") && !toppingCategory.equalsIgnoreCase("cheese")){
-            throw new IllegalArgumentException("Invalid topping category: " + toppingCategory +
-                    " (must be 'meat' or 'cheese')");
-        }
         //Remove any extra spaces
         sandwichSize = sandwichSize.trim();
 
