@@ -110,7 +110,7 @@ public class OrderService {
         }
         while (!availableBreads.contains(breadType));
 
-        //Inialtize a sandwich
+        //Initialize a sandwich
         Sandwich sandwich;
 
         //the signature sandwiches
@@ -230,6 +230,16 @@ public class OrderService {
             System.out.println("Order has been canceled");
         }
     }
+
+    public static String getPremiumToppingCategory(String topping) {
+        if (List.of("steak", "ham", "salami", "roast beef", "chicken", "bacon").contains(topping)) {
+            return "Meat";
+        } else if (List.of("american", "provolone", "cheddar", "swiss").contains(topping)) {
+            return "Cheese";
+        }
+        return null;
+    }
+
 
     public static void customizeToppings(Sandwich sandwich, Scanner scanner) {
         //Shows all categories and pricing for the toppings
