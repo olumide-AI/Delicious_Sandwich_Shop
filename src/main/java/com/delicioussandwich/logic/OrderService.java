@@ -52,19 +52,19 @@ public class OrderService {
                     //build and add a sandwich
                     Sandwich sandwich = buildUserSandwich(scanner);
                     order.addItem(sandwich);
-                    System.out.println(sandwich.getName() + " Sandwich has been added to order");
+                    System.out.println(AnsiColor.ANSI_GREEN +sandwich.getName() + " Sandwich has been added to order" +AnsiColor.ANSI_RESET);
                     break;
                 case "2":
                     //build and add a drink
                     Drink drink = buildUserDrink(scanner);
                     order.addItem(drink);
-                    System.out.println(drink.getName() + " has been added to your order");
+                    System.out.println(AnsiColor.ANSI_GREEN +drink.getName() + " has been added to your order" +AnsiColor.ANSI_RESET);
                     break;
                 case "3":
                     //build and add a chip
                     Chip chip = buildUserChip(scanner);
                     order.addItem(chip);
-                    System.out.println(chip.getName() + " has been added to your order");
+                    System.out.println(AnsiColor.ANSI_GREEN +chip.getName() + " has been added to your order"+AnsiColor.ANSI_RESET);
                     break;
                 case "4":
                     //checkout the user order
@@ -73,24 +73,24 @@ public class OrderService {
                     break;
                 case "5":
                     // Remove an item by name
-                    System.out.print("Enter the name of the item to remove: ");
+                    System.out.print(AnsiColor.ANSI_PURPLE+"Enter the name of the item to remove: " +AnsiColor.ANSI_RESET);
                     String toRemove = scanner.nextLine().trim();
 
                     // attempt removal and give feedback
                     boolean removed = order.removeItemByName(toRemove);
                     if (removed) {
-                        System.out.println("'" + toRemove + "' was removed from your order.");
+                        System.out.println(AnsiColor.ANSI_GREEN +"'" + toRemove + "' was removed from your order." + AnsiColor.ANSI_RESET);
                     } else {
-                        System.out.println("No item named '" + toRemove + "' found in your order.");
+                        System.out.println(AnsiColor.ANSI_YELLOW +"No item named '" + toRemove + "' found in your order." +AnsiColor.ANSI_RESET);
                     }
                     break;
                 case "0":
                     //cancel order
-                    System.out.println("Order canceled. ");
+                    System.out.println(AnsiColor.ANSI_RED +"Order canceled. " + AnsiColor.ANSI_RESET);
                     isOrdering = false;
                     break;
                 default:
-                    System.out.println("Invalid options, please select 0,1,2,3, or 4.");
+                    System.out.println(AnsiColor.ANSI_YELLOW +"Invalid options, please select 0,1,2,3, or 4." + AnsiColor.ANSI_RESET);
 
 
             }
