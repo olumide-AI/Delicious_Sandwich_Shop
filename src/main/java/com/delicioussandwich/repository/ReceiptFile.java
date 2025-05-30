@@ -2,6 +2,7 @@ package com.delicioussandwich.repository;
 
 import com.delicioussandwich.logic.Receipt;
 import com.delicioussandwich.model.order.Order;
+import com.delicioussandwich.ui.AnsiColor;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -36,7 +37,7 @@ public class ReceiptFile {
             fileWriter.close();
 
             //Prompt to let user know that receipt has been saved
-            System.out.println("Receipt saved to: " + receiptFileName);
+            System.out.println(AnsiColor.ANSI_GREEN +"Receipt saved to: " + receiptFileName +AnsiColor.ANSI_RESET);
         }
         //Catch any file writing exception
         catch (IOException e){

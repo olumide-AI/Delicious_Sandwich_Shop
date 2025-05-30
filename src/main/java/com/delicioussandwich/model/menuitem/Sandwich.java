@@ -2,6 +2,7 @@ package com.delicioussandwich.model.menuitem;
 
 import com.delicioussandwich.model.abstractclass.MenuItem;
 import com.delicioussandwich.model.abstractclass.Topping;
+import com.delicioussandwich.ui.AnsiColor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,7 +56,7 @@ public class Sandwich extends MenuItem {
                 return;
             }
         }
-        System.out.println("No Topping was found");
+        System.out.println(AnsiColor.ANSI_RED +"No Topping was found" +AnsiColor.ANSI_RESET);
     }
 
     @Override

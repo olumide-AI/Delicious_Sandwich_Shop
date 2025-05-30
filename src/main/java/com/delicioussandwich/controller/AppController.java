@@ -1,6 +1,7 @@
 package com.delicioussandwich.controller;
 
 import com.delicioussandwich.logic.OrderService;
+import com.delicioussandwich.ui.AnsiColor;
 import com.delicioussandwich.ui.Screen;
 import java.util.Scanner;
 
@@ -28,10 +29,10 @@ public class AppController {
             switch (userInput) {
                 case "1" -> OrderService.newOrder(scanner);
                 case "0" -> {
-                    System.out.println("Goodbye and Thank You");
+                    System.out.println(AnsiColor.ANSI_CYAN +"Goodbye and Thank You" + AnsiColor.ANSI_RESET);
                     isRunning = false;
                 }
-                default -> System.out.println("Invalid option. Please select [1] for New Order or [0] to exit.");
+                default -> System.out.println(AnsiColor.ANSI_RED+"Invalid option. Please select [1] for New Order or [0] to exit."+AnsiColor.ANSI_RESET);
             }
         }
         scanner.close();

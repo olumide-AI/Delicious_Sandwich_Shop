@@ -1,0 +1,17 @@
+DELI-cious Sandwich Shop
+303 2nd st, San Francisco, CA
+Date: 05/30/2025 03:53 AM
+
+--- Order Summary ---
+Customer: Olumide Kolawole (123-234-2323)
+1. Sandwich: 12" white sandwich [toasted]
+Toppings:
+ - Extra Premium steak
+ - steak
+ - avocado
+ - mustard
+ - fries
+ Sandwich Price: $16.00
+2. Drink: large Cola - $3.00
+Total Price: $19.00
+Thank you, come again.
