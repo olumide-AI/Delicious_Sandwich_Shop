@@ -1,0 +1,16 @@
+DELI-cious Sandwich Shop
+303 2nd st, San Francisco, CA
+Date: 05/30/2025 01:10 PM
+
+--- Order Summary ---
+Customer: rosario (123-2323-2323)
+1. Sandwich: Philly Cheese Steak
+Toppings:
+ - Bacon
+ - Cheddar
+ - Lettuce
+ - Tomato
+ - Ranch
+ Sandwich Price: $9.00
+Total Price: $9.00
+Thank you, come again.

@@ -40,6 +40,7 @@ public class Order {
      * This lets us take out the first match we find in our list
      * @param itemName the item you want to remove from order
      */
+    //will be more user friendlt if we used contains
     public boolean removeItemByName(String itemName){
         for(int i=0; i< items.size(); i++){
             if (items.get(i).getName().equalsIgnoreCase(itemName)){

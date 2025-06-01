@@ -153,6 +153,7 @@ public class OrderService {
                 sandwich = new Sandwich(sandwichSize, breadType, isToasted);
 
                 //Optional topping customization
+                // do a do-while for error handling here
                 Screen.promptCustomizeToppings();
                 if (scanner.nextLine().trim().equalsIgnoreCase("yes")) {
                     customizeToppings(sandwich, scanner);
@@ -218,6 +219,8 @@ public class OrderService {
     }
 
     public static void userCheckout(Order order, Scanner scanner) {
+        //Add a feature asking the user of they wanted to add more order maybe in checkout menu or before
+
         //Prints the order summary and gives price
         System.out.println(order.getSummary());
         Screen.printCheckoutMenu();

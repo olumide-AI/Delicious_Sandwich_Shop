@@ -1,0 +1,13 @@
+DELI-cious Sandwich Shop
+303 2nd st, San Francisco, CA
+Date: 06/01/2025 12:24 AM
+
+--- Order Summary ---
+Customer: Olumide Kolawole (309-682-8764)
+1. Sandwich: 12" white sandwich [toasted]
+Toppings:
+ (none)
+ Sandwich Price: $8.50
+2. Drink: small Iced Tea - $2.00
+Total Price: $10.50
+Thank you, come again.
