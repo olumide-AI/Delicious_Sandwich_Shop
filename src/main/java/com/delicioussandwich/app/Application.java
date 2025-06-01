@@ -11,5 +11,7 @@ public class Application {
         new AppController().run();
     }
 }
-
+/*
+  * Method calls the AppController class and runs a method (run) to run the application.
+ */
 

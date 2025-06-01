@@ -12,6 +12,15 @@ import java.util.Scanner;
 public class AppController {
     private final Scanner scanner;
 
+    /*
+        * Created a constructor. We created a constuctor because:
+        * - We had a final variable and we needed to initalize it, with a
+        * constructor we guarantee any new app run gets a scanner
+        * - Gives us flexibilty for encapsulation, if we need to overload, change parameter etc
+        * - prevents null pointer exception
+        * - It makes sure that the scanner field is set up and ready for use every run
+
+     */
     public AppController() {
         this.scanner = new Scanner(System.in);
     }
@@ -38,3 +47,16 @@ public class AppController {
         scanner.close();
     }
 }
+
+/*
+  *A boolean flag is set up to help us better contol when we break
+  * the while loop is constantly calling the home screen along as it's set to true
+  * if a user input 1 it gots to a new class order service and runs the new order methods,
+  new order takes a scanner, since it needs input from user
+  * if user input is 0, prints out a message, the flag is now false and while loop will stop running the app
+  * if neither option is selcted the default is set to print out an error message and app will continue running
+  since flag is still set to true
+  * We used java "arrow" syntax, it's better for error handling and we don't need a break statement
+  * each arrow branch is treated as a self-contained action. Once that statement (or block) runs,
+  control automatically exits the switch. There’s no falling through,
+ */
